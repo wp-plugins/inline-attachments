@@ -230,7 +230,7 @@ function inline_attachments_box_inner($post, $content_block) { ?>
 			}
 			
 			// The defaults. Don't forget to re-save the settings in the admin area after you change any
-			// of the css selectors or Descritpions, so the option can be updated. 
+			// of the css selectors or Descriptions, so the option can be updated. 
 			
 			// This Array contains all ELements you can hide or show:
 			// [0] The Name of the Element
