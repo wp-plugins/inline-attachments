@@ -33,7 +33,8 @@ Another thing with mainly media-driven websites is, that you normally don't writ
 
 == Screenshots ==
 
-1. Soon
+1. The post edit screen with the inline attachments Meta Box (Default Title: Media Files)
+2. The Inline Attachments Settings Panel
 
 == Upgrade Notice ==
 
