@@ -9,8 +9,8 @@ Author: Nonverbla
 Donate link: http://www.nonverbla.de/blog/wordpress-plugin-inline-attachments/
 Requires at least: 3.0
 Tested up to: 3.2
-Stable tag: 0.9
-Version: 0.9
+Stable tag: 0.9.1
+Version: 0.9.1
 
 Shows attachments directly on the post edit screen. Also gives you full control over image edit options.
 
@@ -33,8 +33,7 @@ Another thing with mainly media-driven websites is, that you normally don't writ
 
 == Screenshots ==
 
-1. The post edit screen with the inline attachments Meta Box (Default Title: Media Files)
-2. The Inline Attachments Settings Panel
+1. Soon
 
 == Upgrade Notice ==
 

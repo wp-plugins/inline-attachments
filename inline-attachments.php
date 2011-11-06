@@ -3,9 +3,21 @@
 	Plugin Name: Inline Attachments
 	Plugin URI: http://www.nonverbla.de/blog/wordpress-plugin-inline-attachments/
 	Description: Add a Meta Box containing the Media Panel inside the edit screen. Also adjust wich options should be displayed for attachments (e.g. "Insert Image", "Image Size", "Alignment")
-	Version: 1.0
-	Author: Rasso Hilber
+	Version: 0.9.1
+	Author: Nonverbla
 	Author URI: http://www.nonverbla.de/
+	
+	Plugin: Copyright 2011 Nonverbla  (email : rasso@nonverbla.de)
+
+    This program is free software; you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation; either version 2 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
 */
 
 
@@ -22,7 +34,6 @@ function add_settings_link($links, $file) {
 }
 
 
-
 if(is_admin()) {
 	
 	add_action('admin_init','inline_attachments_init');
@@ -32,7 +43,7 @@ if(is_admin()) {
 	
 	if($pagenow == "media-upload.php" || $pagenow == "media.php"){
 		add_action('admin_head', 'add_attachment_css');
-	} elseif($pagenow == "post.php"){
+	} elseif($pagenow == "post.php" || $pagenow == "post-new.php"){
 		add_action('init', 'add_post_screen_js');
 		add_action('admin_head', 'add_post_screen_css');
 	}
@@ -230,7 +241,7 @@ function inline_attachments_box_inner($post, $content_block) { ?>
 			}
 			
 			// The defaults. Don't forget to re-save the settings in the admin area after you change any
-			// of the css selectors or Descriptions, so the option can be updated. 
+			// of the css selectors or Descritpions, so the option can be updated. 
 			
 			// This Array contains all ELements you can hide or show:
 			// [0] The Name of the Element
