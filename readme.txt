@@ -26,25 +26,21 @@ Another thing with mainly media-driven websites is, that you normally don't writ
 
 == Installation ==
 
-1. Upload the folder 'inline-attachments' to the '/wp-content/plugins/' directory
+1. Install easily with the WordPress plugin control panel or manually download the plugin and upload the extracted folder to the `/wp-content/plugins/` directory
 2. Activate the plugin through the 'Plugins' menu in WordPress
 3. Go to the plugin settings page called “Inline Attachments” and select the post types you want to have it activated for. Also select all the fields you want to enable for media editing.
 3. Go to the post edit sceen, and here it is, your inline attachments meta box.
 
 == Screenshots ==
 
-1. Soon
+1. If activated, Inline Attachments displays all attachments of a post inside the post edit screen
 
 == Upgrade Notice ==
 
-1. None so far
+= 0.9.1 =
+This release also enables the plugins functionality on newly created posts.
 
 == Changelog ==
 
-1. None so far
-
-== Frequently Asked Questions ==
-
-1. None so far
-
-== Donations ==
+= 0.9.1 =
+* Added plugin initialization also for post-new.php, not just post.php, so that it also works on newly created posts
