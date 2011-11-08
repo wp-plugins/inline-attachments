@@ -24,6 +24,8 @@ In the plugin settings, you can select all post types, where the Inline Attachme
 
 Another thing with mainly media-driven websites is, that you normally don't write a text post and put some images into the text flow. Because of this, you wouldn't need the options for Image Size, Alignment, Link URL and so on in the attachment screen. With Inline Attachments, you can easily select which options should be visible to the admin for editing media files.
 
+If you have comments or questions, please go to the official plugin page: [www.nonverbla.de/blog/wordpress-plugin-inline-attachments](http://www.nonverbla.de/blog/wordpress-plugin-inline-attachments/)
+
 == Installation ==
 
 1. Install easily with the WordPress plugin control panel or manually download the plugin and upload the extracted folder to the `/wp-content/plugins/` directory
