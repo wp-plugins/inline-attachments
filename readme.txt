@@ -9,8 +9,8 @@ Author: Nonverbla
 Donate link: http://www.nonverbla.de/blog/wordpress-plugin-inline-attachments/
 Requires at least: 3.0
 Tested up to: 3.2
-Stable tag: 0.9.1
-Version: 0.9.1
+Stable tag: 0.9.2
+Version: 0.9.2
 
 Shows attachments directly on the post edit screen. Also gives you full control over image edit options.
 
@@ -38,9 +38,17 @@ Another thing with mainly media-driven websites is, that you normally don't writ
 == Upgrade Notice ==
 
 = 0.9.1 =
-This release also enables the plugins functionality on newly created posts.
+* This release also enables the plugins functionality on newly created posts.
+= 0.9.2 =
+* Added automatic saving of changed attachments properties on post save / update
+* Optimized the styling while dragging an attachment to change sort order.
 
 == Changelog ==
 
 = 0.9.1 =
 * Added plugin initialization also for post-new.php, not just post.php, so that it also works on newly created posts
+= 0.9.2 =
+* Added automatic saving of changed attachments properties on post save / update
+* Optimized the styling while dragging an attachment to change sort order.
+
+
