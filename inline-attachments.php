@@ -43,16 +43,12 @@ if(is_admin()) {
 	
 	if($pagenow == "media-upload.php" || $pagenow == "media.php"){
 		add_action('admin_head', 'add_attachment_css');
+		add_action('admin_head', 'add_attachment_js');
 	} elseif($pagenow == "post.php" || $pagenow == "post-new.php"){
 		add_action('init', 'add_post_screen_js');
 		add_action('admin_head', 'add_post_screen_css');
 	}
 }
-
-function inline_attachments_activation(){
-	add_option('inline_attachments_activated', true);
-}
-
 function inline_attachments_activation_message(){
 	if (get_option('inline_attachments_activated', false)) {
 		delete_option('inline_attachments_activated'); ?>
@@ -89,8 +85,29 @@ function add_post_screen_js(){
 	wp_enqueue_script('thickbox');
 	wp_enqueue_style('thickbox');
 }
+function add_attachment_js(){?>
+	<script type="text/javascript">
+		$ = jQuery;
+		var galleryTabTimeout;
+		function checkIfMoreThanZero(){
+			if(parseInt($("#attachments-count").text()) > 0){
+				$("#tab-gallery").css("display", "block");
+			} else {
+				galleryTabTimeout = setTimeout(checkIfMoreThanZero, 5000);
+			}
+			
+		}
+		$(document).ready(function(){
+			if($("#tab-gallery").length == 0){
+				$("#sidemenu").append('<li id="tab-gallery"><a href="/cms/wp-admin/media-upload.php?type=file&tab=gallery&post_id=408">Gallery (<span id="attachments-count">0</span>)</a></li>');
+				$("#tab-gallery").css("display", "none");
+				checkIfMoreThanZero();
+			}
+			
+		})
+	</script>
+<?php }
 function add_attachment_css(){?>
-	
 	<style type="text/css" media="screen">
 		/* This CSS comes from inline attachments */
 		#media-upload .widefat {
