@@ -3,7 +3,7 @@
 	Plugin Name: Inline Attachments
 	Plugin URI: http://www.nonverbla.de/blog/wordpress-plugin-inline-attachments/
 	Description: Add a Meta Box containing the Media Panel inside the edit screen. Also adjust wich options should be displayed for attachments (e.g. "Insert Image", "Image Size", "Alignment")
-	Version: 0.9.2
+	Version: 0.9.3
 	Author: Nonverbla
 	Author URI: http://www.nonverbla.de/
 	
@@ -20,6 +20,7 @@
     GNU General Public License for more details.
 */
 
+$inline_attachments_directory = get_bloginfo("wpurl") . "/wp-content/plugins/inline-attachments";
 
 // Add Settings link to plugins - code from GD Star Ratings
 
@@ -35,15 +36,15 @@ function add_settings_link($links, $file) {
 
 
 if(is_admin()) {
-	
 	add_action('admin_init','inline_attachments_init');
 	add_action( 'admin_menu', 'adminMenu');
 	add_filter('plugin_action_links', 'add_settings_link', 10, 2 );
 	register_activation_hook(__FILE__, 'inline_attachments_activation');
 	
 	if($pagenow == "media-upload.php" || $pagenow == "media.php"){
-		add_action('admin_head', 'add_attachment_css');
-		add_action('admin_head', 'add_attachment_js');
+		add_action('init', 'add_media_screen_js');
+		add_action('admin_head', 'javascript_gallery_link');
+		add_action('admin_head', 'add_media_screen_css');
 	} elseif($pagenow == "post.php" || $pagenow == "post-new.php"){
 		add_action('init', 'add_post_screen_js');
 		add_action('admin_head', 'add_post_screen_css');
@@ -78,36 +79,30 @@ function inline_attachments_init() {
 }
 
 function add_post_screen_js(){
-	$plugin_directory = get_bloginfo("wpurl") . "/wp-content/plugins/inline-attachments";
-	$script_url = $plugin_directory . "/js/inline-attachments-post-screen.js";
+	global $inline_attachments_directory;
+	$script_url = $inline_attachments_directory . "/js/inline-attachments-post-screen.js";
 	wp_register_script('inline-attachments-post-screen', $script_url);
 	wp_enqueue_script('inline-attachments-post-screen');
 	wp_enqueue_script('thickbox');
 	wp_enqueue_style('thickbox');
 }
-function add_attachment_js(){?>
+function add_media_screen_js(){
+	global $inline_attachments_directory;
+	$script_url = $inline_attachments_directory . "/js/inline-attachments-media-screen.js";
+	wp_register_script('inline-attachments-media-screen', $script_url);
+	wp_enqueue_script('inline-attachments-media-screen');
+}
+function javascript_gallery_link(){
+	$wp_url = get_bloginfo("wpurl");
+	$post_id = $_GET["post_id"];
+	$link_text = __("Gallery");
+	$link = "<a id='gallery-link' href='{$wp_url}/wp-admin/media-upload.php?type=file&tab=gallery&is_inline=1&post_id={$post_id}'>{$link_text} (<span id='attachments-count'>0</span>)</a>";
+	?>
 	<script type="text/javascript">
-		$ = jQuery;
-		var galleryTabTimeout;
-		function checkIfMoreThanZero(){
-			if(parseInt($("#attachments-count").text()) > 0){
-				$("#tab-gallery").css("display", "block");
-			} else {
-				galleryTabTimeout = setTimeout(checkIfMoreThanZero, 5000);
-			}
-			
-		}
-		$(document).ready(function(){
-			if($("#tab-gallery").length == 0){
-				$("#sidemenu").append('<li id="tab-gallery"><a href="/cms/wp-admin/media-upload.php?type=file&tab=gallery&post_id=408">Gallery (<span id="attachments-count">0</span>)</a></li>');
-				$("#tab-gallery").css("display", "none");
-				checkIfMoreThanZero();
-			}
-			
-		})
+		phpGalleryLink = "<?php echo $link; ?>";
 	</script>
 <?php }
-function add_attachment_css(){?>
+function add_media_screen_css(){?>
 	<style type="text/css" media="screen">
 		/* This CSS comes from inline attachments */
 		#media-upload .widefat {
@@ -177,7 +172,7 @@ function add_post_screen_css(){ ?>
 			border-top: 1px solid #dadada;
 		}
 		#inline_attachments_footer a.resizeButton {
-			background: url("<?php bloginfo('wpurl'); ?>/wp-content/plugins/inline-attachments/img/resize.gif") no-repeat scroll right bottom transparent;
+			background: url("images/resize.gif") no-repeat scroll right bottom transparent;
 			cursor: se-resize;
 			display: block !important;
 			margin: 2px 3px;
@@ -368,9 +363,9 @@ function inline_attachments_box_inner($post, $content_block) { ?>
 					<strong><?php _e("Post Types") ?>:</strong> <?php _e( 'Select the post types you want to display the inline attachments box in.' ); ?><br />
 					<strong><?php _e("MetaBox Titles") ?>:</strong> <?php _e( 'For each post type, you can set the title of the inline attachments box separately.' ); ?>
 				</p>
-				<?php wp_nonce_field( 'inline-attachments-nonce', 'inline-attachments-nonce', true, true ); ?>
+				<?php wp_nonce_field( 'inline-attachments-options-nonce', 'inline-attachments-options-nonce', true, true ); ?>
 				<input type="hidden" name="action" value="inline_attachments_options_save" />
-				<input type="hidden" name="inline-attachments-nonce" value="true" />
+				<input type="hidden" name="inline-attachments-options-nonce" value="true" />
 				<table class="wp-list-table widefat fixed posts" cellspacing="0">
 					<thead>
 						<tr style="height: 36px;">

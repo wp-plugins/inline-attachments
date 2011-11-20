@@ -9,8 +9,8 @@ Author: Nonverbla
 Donate link: http://www.nonverbla.de/blog/wordpress-plugin-inline-attachments/
 Requires at least: 3.0
 Tested up to: 3.2
-Stable tag: 0.9.2
-Version: 0.9.2
+Stable tag: 0.9.3
+Version: 0.9.3
 
 Shows attachments directly on the post edit screen. Also gives you full control over image edit options.
 
@@ -26,6 +26,8 @@ Another thing with mainly media-driven websites is, that you normally don't writ
 
 If you have comments or questions, please go to the official plugin page: [www.nonverbla.de/blog/wordpress-plugin-inline-attachments](http://www.nonverbla.de/blog/wordpress-plugin-inline-attachments/)
 
+**Please rate the plugin and post comments, if anything doesn't work as expected. ––>**
+
 == Installation ==
 
 1. Install easily with the WordPress plugin control panel or manually download the plugin and upload the extracted folder to the `/wp-content/plugins/` directory
@@ -39,11 +41,14 @@ If you have comments or questions, please go to the official plugin page: [www.n
 
 == Upgrade Notice ==
 
-= 0.9.1 =
-* This release also enables the plugins functionality on newly created posts.
+= 0.9.3 =
+* Added ajax-saving of attachments order and input fields on change
 = 0.9.2 =
 * Added automatic saving of changed attachments properties on post save / update
 * Optimized the styling while dragging an attachment to change sort order.
+= 0.9.1 =
+* This release also enables the plugins functionality on newly created posts.
+
 
 == Changelog ==
 
