@@ -41,6 +41,7 @@ Due to it's very different approach, *Inline Attachments* does **not** support t
 == Screenshots ==
 
 1. If activated, Inline Attachments displays all attachments of a post inside the post edit screen
+2. The Inline Attachments Options Screen
 
 == Upgrade Notice ==
 = 0.9.4 =
