@@ -218,9 +218,13 @@ class Inline_attachments {
 				float: right;
 				margin: 4px 0px 0px 0px;
 				padding: 0px;
+				overflow: hidden;
+				width: 300px;
 			}
 			#bulk-delete-ui-wrapper .button {
 				margin-left: 5px !important;
+				display: block;
+				float: right;
 			}
 			#bulk-delete-ajax-loader {
 				width: 16px;
@@ -296,7 +300,7 @@ class Inline_attachments {
 		</div>
 
 		<span id="open_attachments_lightbox">
-			&nbsp;<a class="thickbox" href="media-upload.php?post_id=<?php echo $post->ID; ?>&amp;TB_iframe=1&amp;tab=gallery&amp;width=640&amp;height=455" href="#">Lightbox ↗</a>
+			&nbsp;<a class="thickbox" href="media-upload.php?post_id=<?php echo $post->ID; ?>&amp;TB_iframe=1&amp;tab=gallery&amp;width=640&amp;height=455" href="#"><?php _e("Lightbox"); ?></a>
 		</span>
 
 		<div id="inline_attachments_footer">
@@ -321,14 +325,14 @@ class Inline_attachments {
 		if($image_count > 0){ ?>
 			<span style='display: none;' id='bulk-delete-ui-wrapper'>
 				<span style='display: none;' id='current-post-id'><?php echo $post_id; ?></span>
-				<a class='button bulk-delete-attachment-button' href='<?php echo $this->dir; ?>/php/bulk-delete.php?_wpnonce=<?php echo $bulk_delete_nonce; ?>&post=<?php echo $post_id; ?>' id='delete-all-media'>
-					<?php _e("Delete selected Attachments", "inlineattachments"); ?>
-				</a>
 				<span id='cancel-delete-all-media-wrapper' style='display: none;'>
 					<a class='button bulk-delete-attachment-button' href='#' id='cancel-delete-all-media'>
 						<?php _e("Cancel", "inlineattachments"); ?>
 					</a>
 				</span>
+				<a class='button bulk-delete-attachment-button' href='<?php echo $this->dir; ?>/php/bulk-delete.php?_wpnonce=<?php echo $bulk_delete_nonce; ?>&post=<?php echo $post_id; ?>' id='delete-all-media'>
+					<?php _e("Delete selected Attachments", "inlineattachments"); ?>
+				</a>
 				<span style='display:none;' id='error-messages'>
 					<span id='abd-none-selected'><?php _e("You need to select some attachments first.", "inlineattachments"); ?></span>
 				</span>
