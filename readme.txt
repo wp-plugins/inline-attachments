@@ -3,7 +3,7 @@
 Contributors: Nonverbla
 Plugin Name: Inline Attachments
 Plugin URI: http://www.nonverbla.de/blog/wordpress-plugin-inline-attachments/
-Tags: attachments, inline, thickbox, meta box, adjust, options, admin
+Tags: attachments, inline, thickbox, meta box, adjust, options, admin, bulk, delete, image, checkbox, ajax
 Author URI: http://www.nonverbla.de/
 Author: Nonverbla
 Donate link: http://www.nonverbla.de/blog/wordpress-plugin-inline-attachments/
@@ -55,13 +55,18 @@ Due to it's very different approach, *Inline Attachments* does **not** support t
 = 0.9.1 =
 * This release also enables the plugins functionality on newly created posts.
 
-
 == Changelog ==
 
-= 0.9.1 =
-* Added plugin initialization also for post-new.php, not just post.php, so that it also works on newly created posts
+= 0.9.4 =
+* Added localization and German translation
+* Added the functionality of my plugin [Attachments Bulk Delete](http://www.nonverbla.de/blog/wordpress-plugin-inline-attachments/). I like having everything in the same place ;)
+= 0.9.3 =
+* Added ajax-saving of attachments order and input fields on change
 = 0.9.2 =
 * Added automatic saving of changed attachments properties on post save / update
 * Optimized the styling while dragging an attachment to change sort order.
+= 0.9.1 =
+* Added plugin initialization also for post-new.php, not just post.php, so that it also works on newly created posts
+
 
 
