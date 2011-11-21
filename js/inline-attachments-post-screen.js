@@ -1,6 +1,6 @@
 (function(){
-	
-	var wrapper,
+	var $,
+		wrapper,
 		iframe,
 		minHeight = 100,
 		contentHeight,

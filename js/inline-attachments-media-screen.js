@@ -1,10 +1,28 @@
-(function(){
+(function($){
 	var $,
 		galleryTabTimeout,
 		ajaxBusy = false,
 		currentMenuOrder,
 		galleryLink;
 	
+	jQuery(document).ready(function(){
+		$ = jQuery;
+		galleryLink = phpGalleryLink;
+		currentMenuOrder = getMenuOrder();
+		// If there is no Gallery tab
+		if($("#tab-gallery").length == 0){
+			$("#sidemenu #tab-type").after('<li id="tab-gallery"></li>');
+			$("#tab-gallery").append(galleryLink);
+			$("#tab-gallery").css("display", "none");
+			checkIfMoreThanZero();
+		} else if($("#tab-gallery a").hasClass("current") && $(".media-item").length > 1) {
+			// If we are on the gallery screen
+			saveAjax();
+			addAjaxOrderAutoSave();
+			addAjaxFieldsAutoSave();
+		}
+	})
+	// Checks for new uploaded files and adds the gallery tab, if there are more then 0 files uploaded
 	function checkIfMoreThanZero(){
 		if(parseInt($("#attachments-count").text()) > 0){
 			$("#tab-gallery").css("display", "block");
@@ -12,21 +30,6 @@
 			galleryTabTimeout = setTimeout(checkIfMoreThanZero, 1000);
 		}
 	}
-	jQuery(document).ready(function(){
-		$ = jQuery;
-		galleryLink = phpGalleryLink;
-		currentMenuOrder = getMenuOrder();
-		if($("#tab-gallery").length == 0){
-			$("#sidemenu").append('<li id="tab-gallery"></li>');
-			$("#tab-gallery").append(galleryLink);
-			$("#tab-gallery").css("display", "none");
-			checkIfMoreThanZero();
-		} else if($("#tab-gallery a").hasClass("current") && $(".media-item").length > 1) {
-			saveAjax();
-			addAjaxOrderAutoSave();
-			addAjaxFieldsAutoSave();
-		}
-	})
 	// Autosaving of changed fields on blur
 	function addAjaxFieldsAutoSave(){
 		$(".slidetoggle input, .slidetoggle textarea").change(function(){
@@ -47,6 +50,7 @@
 			}, 50);
 		})
 	}
+	// The AutoSave AJAX-Call
 	function saveAjax(){
 		if(!ajaxBusy){
 			ajaxBusy = true;
@@ -65,12 +69,13 @@
 			});
 		}
 	}
+	// Get the menu order of the media items by their DOM order
 	function getMenuOrder(){
 		var mo = "";
 		$(".media-item").each(function(){
 			var id = $(this).attr("id").split("media-item-")[1];
 			var menuOrder = $(this).find(".menu_order_input").attr("value");
-			mo += id + "-" + menuOrder + ",";
+			mo += id;
 		})
 		return mo;
 	}
