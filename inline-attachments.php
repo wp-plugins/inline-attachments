@@ -279,7 +279,6 @@ class Inline_attachments {
 		</style>
 	<?php }
 	function inline_attachments_box_inner($post, $content_block) { ?>
-
 		<?php 
 			global $post; 
 			$args = array(
@@ -310,8 +309,7 @@ class Inline_attachments {
 	/////////////////////////////////////////////////////////////////////////
 	// Bulk Delete UI
 	function add_attachments_bulk_delete(){
-		global $post;
-		$post_id = $post->ID;
+		$post_id = $_GET["post_id"];
 
 		$images = get_children(array(
 			'post_parent' => $post_id,
