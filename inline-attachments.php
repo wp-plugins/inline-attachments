@@ -219,7 +219,6 @@ class Inline_attachments {
 				margin: 4px 0px 0px 0px;
 				padding: 0px;
 				overflow: hidden;
-				width: 300px;
 			}
 			#bulk-delete-ui-wrapper .button {
 				margin-left: 5px !important;
@@ -229,7 +228,7 @@ class Inline_attachments {
 			#bulk-delete-ajax-loader {
 				width: 16px;
 				height: 16px;
-				margin-left: 5px;
+				margin: 0px 8px 0px 5px;
 				display: none;
 				padding-left: 10px !important;
 			}
