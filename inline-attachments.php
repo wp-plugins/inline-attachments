@@ -39,7 +39,6 @@ if(is_admin()) {
 	add_action('admin_init','inline_attachments_init');
 	add_action( 'admin_menu', 'adminMenu');
 	add_filter('plugin_action_links', 'add_settings_link', 10, 2 );
-	register_activation_hook(__FILE__, 'inline_attachments_activation');
 	
 	if($pagenow == "media-upload.php" || $pagenow == "media.php"){
 		add_action('init', 'add_media_screen_js');
@@ -216,9 +215,9 @@ function inline_attachments_box_inner($post, $content_block) { ?>
 	?>
 	<div id="inline_attachments_iframe_wrapper">
 		<?php if(count($attachments) == 0): ?>
-			<iframe id="inline_attachments_iframe" src="<?php bloginfo('wpurl'); ?>/wp-admin/media-upload.php?post_id=<?php echo $post->ID ?>&is_inline=1&tab=type"></iframe>
+			<iframe id="inline_attachments_iframe" src="<?php bloginfo('wpurl'); ?>/wp-admin/media-upload.php?post_id=<?php echo $post->ID ?>&TB_iframe=1&is_inline=1&tab=type&attachments_thickbox=1"></iframe>
 		<?php else: ?>
-			<iframe id="inline_attachments_iframe" src="<?php bloginfo('wpurl'); ?>/wp-admin/media-upload.php?post_id=<?php echo $post->ID ?>&is_inline=1&tab=gallery"></iframe>
+			<iframe id="inline_attachments_iframe" src="<?php bloginfo('wpurl'); ?>/wp-admin/media-upload.php?post_id=<?php echo $post->ID ?>&TB_iframe=1&is_inline=1&tab=gallery&attachments_thickbox=1"></iframe>
 		<?php endif; ?>
 	</div>
 	

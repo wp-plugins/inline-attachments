@@ -28,13 +28,11 @@
 		})
 	}
 	function addIframeScaling(){
-		
 		iframeContents.find(".toggle").click(function(){
 			fitHeightToSlide($(this));
 		});
-		var headerHeight = iframeContents.find("#media-upload-header").height() + 10;
-		var formHeight = iframeContents.find('form:first').height();
-		contentHeight = headerHeight + formHeight + 20;
+		var form = iframeContents.find('form.media-upload-form');
+		contentHeight = form.position().top + form.height() + 30;
 		if(contentHeight > maxInitHeight) contentHeight = maxInitHeight;
 		animateHeight(contentHeight);
 	}

@@ -21,7 +21,7 @@
 			$("#tab-gallery").append(galleryLink);
 			$("#tab-gallery").css("display", "none");
 			checkIfMoreThanZero();
-		} else if($(".media-item").length > 1) {
+		} else if($("#tab-gallery a").hasClass("current") && $(".media-item").length > 1) {
 			saveAjax();
 			addAjaxOrderAutoSave();
 			addAjaxFieldsAutoSave();
