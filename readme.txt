@@ -45,6 +45,7 @@ Due to it's very different approach, *Inline Attachments* does **not** support t
 == Upgrade Notice ==
 = 0.9.4 =
 * Added localization and German translation
+* Added the functionality of my plugin [Attachments Bulk Delete](http://www.nonverbla.de/blog/wordpress-plugin-inline-attachments/). I like having everything in the same place ;)
 = 0.9.3 =
 * Added ajax-saving of attachments order and input fields on change
 = 0.9.2 =
