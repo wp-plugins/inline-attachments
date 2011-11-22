@@ -16,6 +16,7 @@
 		);
 		$all_other_attachments = get_posts($args);
 		$all_other_attachment_urls = array();
+		echo "All Attachments:";
 		if($all_other_attachments){
 			foreach($all_other_attachments as $att){
 				echo "<br />".wp_get_attachment_url($att->ID);

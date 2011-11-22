@@ -89,7 +89,7 @@
 			}
 		})
 		// add the toggle all checkbox
-		$(".actions-head").append("<input type='checkbox' id='bulk-delete-toggle' value=''></input>");
+		$("#gallery-form .widefat thead tr:first").append("<th class='bulk-delete-head'><input type='checkbox' id='bulk-delete-toggle' value=''></input></th>");
 		$("#bulk-delete-toggle").css({
 			"position": "relative",
 			"display": "block",

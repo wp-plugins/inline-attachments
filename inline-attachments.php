@@ -53,6 +53,7 @@ class Inline_attachments {
 				// if this is the media screen
 				add_action('init', array($this,'add_media_screen_js'));
 				add_action('admin_head', array($this,'add_media_screen_css'));
+				//add_action("admin_head", array($this, "add_description_tinymce"));
 				add_action('admin_head', array($this,'javascript_gallery_link'));
 				// Bulk Delete
 				if($this->check_if_bulk_delete_enabled()) {
@@ -158,6 +159,20 @@ class Inline_attachments {
 			var phpGalleryLink = "<?php echo $gallery_link_element; ?>";
 		</script>
 	<?php }
+	function add_description_tinymce(){
+		if (function_exists('wp_tiny_mce')) {
+			wp_tiny_mce(true, array(
+				'mode' => 'exact',
+				'elements' => 'attachments[770][post_content]',
+				'height' => 200,
+				'plugins' => 'wpdialogs,wplink,paste,tabfocus',
+				'forced_root_block' => false,
+				'force_br_newlines' => true,
+				'force_p_newlines' => false,
+				'convert_newlines_to_brs' => true
+			));
+		}
+	}
 	function add_media_screen_css(){?>
 		<style type="text/css" media="screen">
 			/* This CSS comes from inline attachments and customizes the media screen */
@@ -179,10 +194,30 @@ class Inline_attachments {
 				padding-right: 2px  !important;
 				width: auto;
 				min-width: 488px !important;
+				cursor: default !important;
+			}
+			#gallery-form .media-item .filename {
+				cursor: move !important;
 			}
 			#media-upload .menu_order {
-				text-align: left !important;
-				width: 25% !important;
+				text-align: center;
+				margin-right: 20px !important;
+				width: 23px;
+			}
+			#media-upload .menu_order input {
+				text-align: center;
+			}
+			#media-upload td.A1B1 {
+				width: 170px !important;
+				padding-top: 10px;
+			}
+			#media-upload .order-head,
+			#media-upload .actions-head {
+				display: none !important;
+			}
+			#media-upload .waiting {
+				display: block !important;
+				width: 23px !important;
 			}
 			#sort-buttons {
 				width: 97% !important;
@@ -191,6 +226,16 @@ class Inline_attachments {
 			}
 			.sorthelper {
 				width: 100% !important;
+			}
+			.media-item .field {
+				padding-right: 20px !important;
+			}
+			.describe input[type="text"], 
+			.describe textarea {
+				width: 100% !important;
+			}
+			.describe textarea {
+				height: 150px !important;
 			}
 			.ui-sortable-helper {
 				left: 13px !important;
@@ -259,6 +304,7 @@ class Inline_attachments {
 			}
 			#inline_attachments iframe {
 				width: 100%;
+				border: 0px none;
 			}
 			#inline_attachments .inside {
 				padding: 0px;
@@ -276,6 +322,11 @@ class Inline_attachments {
 				font-size: 11px;
 				font-weight: normal;
 			}
+			#inline_attachments h3 .waiting {
+				display: block;
+				float: left;
+				margin: 0px 6px 0px 0px;
+			}
 		</style>
 	<?php }
 	function inline_attachments_box_inner($post, $content_block) { ?>
@@ -291,9 +342,9 @@ class Inline_attachments {
 		?>
 		<div id="inline_attachments_iframe_wrapper">
 			<?php if(count($attachments) == 0): ?>
-				<iframe id="inline_attachments_iframe" src="<?php bloginfo('wpurl'); ?>/wp-admin/media-upload.php?post_id=<?php echo $post->ID ?>&TB_iframe=1&is_inline=1&tab=type&attachments_thickbox=1"></iframe>
+				<iframe id="inline_attachments_iframe" frameborder="0" src="<?php bloginfo('wpurl'); ?>/wp-admin/media-upload.php?post_id=<?php echo $post->ID ?>&TB_iframe=1&is_inline=1&tab=type&attachments_thickbox=1"></iframe>
 			<?php else: ?>
-				<iframe id="inline_attachments_iframe" src="<?php bloginfo('wpurl'); ?>/wp-admin/media-upload.php?post_id=<?php echo $post->ID ?>&TB_iframe=1&is_inline=1&tab=gallery&attachments_thickbox=1"></iframe>
+				<iframe id="inline_attachments_iframe" frameborder="0" src="<?php bloginfo('wpurl'); ?>/wp-admin/media-upload.php?post_id=<?php echo $post->ID ?>&TB_iframe=1&is_inline=1&tab=gallery&attachments_thickbox=1"></iframe>
 			<?php endif; ?>
 		</div>
 

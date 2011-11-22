@@ -20,8 +20,13 @@
 			saveAjax();
 			addAjaxOrderAutoSave();
 			addAjaxFieldsAutoSave();
+			customizeMediaItemHeads();
 		}
 	})
+	function customizeMediaItemHeads(){
+		//$(".media-item .toggle").remove();
+		$(".media-item .menu_order input").attr("disabled", true);
+	}
 	// Checks for new uploaded files and adds the gallery tab, if there are more then 0 files uploaded
 	function checkIfMoreThanZero(){
 		if(parseInt($("#attachments-count").text()) > 0){
@@ -55,7 +60,7 @@
 		if(!ajaxBusy){
 			ajaxBusy = true;
 			currentMenuOrder = getMenuOrder();
-			$('.updated-media-item .menu_order input').hide().after('<img alt="processing" src="images/wpspin_light.gif" class="waiting" style="margin: 0px;" />');
+			$('.updated-media-item .menu_order input').hide().after('<span class="waiting"><img alt="processing" src="images/wpspin_light.gif"" /></span>');
 			var items = new Array();
 			$(".media-item").each(function(index){
 				$(this).find(".menu_order_input").attr("value", index+1);
@@ -63,7 +68,7 @@
 				items.push(itemId);
 			})
 			$.post($("#gallery-form").attr("action"), $("#gallery-form").serialize(), function(data){
-				$('.media-item img.waiting').remove();
+				$('.media-item .waiting').remove();
 				$('.menu_order input').show();
 				ajaxBusy = false;
 			});

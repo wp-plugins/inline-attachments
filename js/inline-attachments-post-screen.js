@@ -11,10 +11,12 @@
 		$ = jQuery;
 		wrapper = $("#inline_attachments .inside");
 		iframe = $("#inline_attachments_iframe");
+		$("#inline_attachments h3:first").append("<img src='images/wpspin_light.gif' class='waiting' alt='' />")
 		iframe.load(function(){
 			iframeContents = iframe.contents();
 			addIframeScaling();
 			addSavePostHook();
+			$("#inline_attachments h3 .waiting").hide("fast");
 		});
 		addResize();
 		//tb_init('a.thickbox, area.thickbox, input.thickbox');
