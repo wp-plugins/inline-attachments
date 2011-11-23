@@ -19,10 +19,10 @@ Shows attachments directly on the post edit screen. Also gives you full control 
 = Short Version (aka Features Overview) =
 
 * Adds the attachments screen that's usually reached trough the thickbox popup directly to a meta box inside the post edit screen
-* Provides an interface to hide unnecessary stuff on media screen screen using checkboxes (e.g. "Insert Into Post" Button, Size, Alignment, …)
+* Provides an interface to hide unnecessary stuff on the media screen (e.g. "Insert Into Post" Button, Size, Alignment, …)
 * Adds a checkbox to every attachment and a button to delete all checked Attachments at once
 * Posts, Pages and Custom Post Types supported (selectable)
-* Is designed to seamlessly blend in with the native Wordpress admin style
+* Designed to seamlessly blend in with the native Wordpress admin style
 
 = Long Version =
 
