@@ -196,6 +196,9 @@ class Inline_attachments {
 				min-width: 488px !important;
 				cursor: default !important;
 			}
+			#gallery-form {
+				margin-top: 13px !important;
+			}
 			#gallery-form .media-item .filename {
 				cursor: move !important;
 			}
@@ -219,6 +222,10 @@ class Inline_attachments {
 				display: block !important;
 				width: 23px !important;
 			}
+			#media-upload-header #sidemenu {
+				margin-left: 0px !important;
+				padding-left: 2px !important;
+			}
 			#sort-buttons {
 				width: 97% !important;
 				margin: 3px 0px -8px 0 !important;
@@ -230,8 +237,8 @@ class Inline_attachments {
 			.media-item .field {
 				padding-right: 20px !important;
 			}
-			.describe input[type="text"], 
-			.describe textarea {
+			.describe .field input[type="text"], 
+			.describe .field textarea {
 				width: 100% !important;
 			}
 			.describe textarea {
@@ -327,6 +334,10 @@ class Inline_attachments {
 				float: left;
 				margin: 0px 6px 0px 0px;
 			}
+			#inline_attachments_iframe_wrapper {
+				position: relative;
+				line-height: 0px;
+			}
 		</style>
 	<?php }
 	function inline_attachments_box_inner($post, $content_block) { ?>
@@ -348,7 +359,7 @@ class Inline_attachments {
 			<?php endif; ?>
 		</div>
 
-		<span id="open_attachments_lightbox">
+		<span id="open_attachments_lightbox" class="hide-if-no-js">
 			&nbsp;<a class="thickbox" href="media-upload.php?post_id=<?php echo $post->ID; ?>&amp;TB_iframe=1&amp;tab=gallery&amp;width=640&amp;height=455" href="#"><?php _e("Lightbox"); ?></a>
 		</span>
 
@@ -422,7 +433,7 @@ class Inline_attachments {
 			// [2] If the element should be visible (true) or not (false)
 
 			$default_inline_attachments_media_elements = array(
-				array(__("Sort Order"), "#sort-buttons", false),
+				array(__("Order") . " " . __("Ascending") . " / " . __("Descending"), "#sort-buttons", false),
 				array("Tab “".__("From URL")."”", "#media-upload #tab-type_url", false),
 				array("Tab “".__("Media Library")."”", "#media-upload #tab-library", false),
 				array(__("Edit Image"), ".media-item-info .button", false),
@@ -442,6 +453,7 @@ class Inline_attachments {
 			if(!$inline_attachments_media_elements){
 				$inline_attachments_media_elements = $default_inline_attachments_media_elements;
 			}
+			
 			
 			// Default Features
 			
@@ -512,7 +524,7 @@ class Inline_attachments {
 			<div id="icon-options-general" class="icon32">
 				<br />
 			</div>
-			<h2><?php _e( 'Inline Attachments - Settings', "inlineattachments"); ?></h2>
+			<h2><?php _e( 'Inline Attachments', "inlineattachments"); ?></h2>
 			<?php if ( !empty( $message ) ) : ?>
 				<div style="margin-top: 10px;" id="message" class="updated fade">
 
@@ -605,7 +617,7 @@ class Inline_attachments {
 					?>
 					<li>
 						<input <?php echo ($me[2] == true ? ' checked="checked"' : ''); ?> id="ia_media_element[<?php echo $count; ?>]" type="checkbox" value="true" name="ia_media_element[<?php echo $count; ?>]">
-						<label for="ia_media_element[<?php echo $count; ?>]"><?php echo $me[0]; ?></label>
+						<label for="ia_media_element[<?php echo $count; ?>]"><?php echo $default_inline_attachments_media_elements[$count][0]; ?></label>
 						<span style="display: none; font-style:italic; color: #999; font-size: 11px;"class="help"><?php echo $me[1]; ?></span>
 					</li>
 					<?php endforeach; ?>

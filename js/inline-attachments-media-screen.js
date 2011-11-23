@@ -21,8 +21,14 @@
 			addAjaxOrderAutoSave();
 			addAjaxFieldsAutoSave();
 			customizeMediaItemHeads();
+			addKeyboardListeners();
 		}
 	})
+	function addKeyboardListeners(){
+		$("tr.post_title input").keyup(function(e){
+			$(this).parents(".media-item").find(".filename .title").text($(this).attr("value"));
+		})
+	}
 	function customizeMediaItemHeads(){
 		//$(".media-item .toggle").remove();
 		$(".media-item .menu_order input").attr("readonly", "readonly");
@@ -61,12 +67,11 @@
 			ajaxBusy = true;
 			currentMenuOrder = getMenuOrder();
 			$('.updated-media-item .menu_order input').hide().after('<span class="waiting"><img alt="processing" src="images/wpspin_light.gif"" /></span>');
-			/*var items = new Array();
+			var items = new Array();
+			// Give every Item its number
 			$(".media-item").each(function(index){
 				$(this).find(".menu_order_input").attr("value", index+1);
-				var itemId = parseInt($(this).attr("id").split("media-item-")[1]);
-				items.push(itemId);
-			})*/
+			})
 			$.post($("#gallery-form").attr("action"), $("#gallery-form").serialize(), function(data){
 				$('.media-item .waiting').remove();
 				$('.menu_order input').show();

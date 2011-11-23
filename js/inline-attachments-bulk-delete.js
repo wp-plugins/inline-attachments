@@ -62,7 +62,7 @@
 				redirectUrl = rootUrl + "?post_id=" + $('#current-post-id').text();
 			}
 			window.location.href = redirectUrl;
-			
+			$('#inline_attachments iframe', top.document).attr("src", redirectUrl);
 		});
 	}
 	function addCheckBoxes(){

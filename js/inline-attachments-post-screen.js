@@ -19,6 +19,7 @@
 			$("#inline_attachments h3 .waiting").hide("fast");
 		});
 		addResize();
+		$("#open_attachments_lightbox").appendTo("#inline_attachments");
 		//tb_init('a.thickbox, area.thickbox, input.thickbox');
 	})
 	function addSavePostHook(){
@@ -33,10 +34,7 @@
 		iframeContents.find(".toggle").click(function(){
 			fitHeightToSlide($(this));
 		});
-		var form = iframeContents.find('form.media-upload-form');
-		contentHeight = form.position().top + form.height() + 30;
-		if(contentHeight > maxInitHeight) contentHeight = maxInitHeight;
-		animateHeight(contentHeight);
+		autoAnimateHeight();
 	}
 	function fitHeightToSlide(toggle){
 		if(toggle.hasClass("describe-toggle-on")){
@@ -86,12 +84,16 @@
 		$("#dragging-overlay").remove();
 	}
 	function animateHeight(h){
-		
 		wrapper.animate({
 			height: (h + 17) + "px"
 		}, 400);
 		iframe.animate({
 			height: (h) + "px"
 		}, 400);
+	}
+	function autoAnimateHeight(){
+		var form = iframeContents.find('form.media-upload-form');
+		contentHeight = form.position().top + form.height() + parseInt(form.css('margin-bottom')) + 30;
+		animateHeight(contentHeight);
 	}
 })();
