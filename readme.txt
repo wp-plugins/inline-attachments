@@ -16,7 +16,7 @@ Shows attachments directly on the post edit screen. Also gives you full control 
 
 == Description ==
 
-= Short Version (aka Overviews Overview) =
+= Short Version (aka Features Overview) =
 
 * Adds the attachments screen that's usually reached trough the thickbox popup directly to a meta box inside the post edit screen
 * Provides an interface to hide unnecessary stuff on media screen screen using checkboxes (e.g. "Insert Into Post" Button, Size, Alignment, …)
@@ -34,7 +34,7 @@ In the plugin settings, you can select all post types, where the Inline Attachme
 
 Another thing with mainly media-driven websites is, that you normally don't write a text post and put some images into the text flow. Because of this, you wouldn't need the options for Image Size, Alignment, Link URL and so on in the attachment screen. With Inline Attachments, you can easily select which options should be visible to the admin for editing media files.
 
-Also, I always thought, deleting a bunch of media files was quite a hassle. That's why I included the functionality of my plugin [Attachments Bulk Delete](http://www.nonverbla.de/blog/wordpress-plugin-inline-attachments/). I like having everything in the same place ;)
+Also, I always thought, deleting a bunch of media files in the attachments screen was quite a hassle. You had to epand every item you wanted to delete, press delete and even confirm that, peh! That's why I included the functionality of my plugin [Attachments Bulk Delete](http://www.nonverbla.de/blog/wordpress-plugin-inline-attachments/). I like having everything in the same place ;)
 
 If you have comments or questions, please go to the official plugin page: [www.nonverbla.de/blog/wordpress-plugin-inline-attachments](http://www.nonverbla.de/blog/wordpress-plugin-inline-attachments/)
 
