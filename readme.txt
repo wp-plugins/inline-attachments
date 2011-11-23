@@ -26,10 +26,11 @@ Another thing with mainly media-driven websites is, that you normally don't writ
 
 If you have comments or questions, please go to the official plugin page: [www.nonverbla.de/blog/wordpress-plugin-inline-attachments](http://www.nonverbla.de/blog/wordpress-plugin-inline-attachments/)
 
-**Please Note**
+= Please Note =
+
 Due to it's very different approach, *Inline Attachments* does **not** support the functionality of the plugin *Attachments*.
 
-**Please rate the plugin and post comments, if anything doesn't work as expected. ––>**
+**Please rate the plugin and post comments, if anything doesn't work as expected.**
 
 == Installation ==
 
