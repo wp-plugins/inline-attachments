@@ -3,7 +3,7 @@
 	Plugin Name: Inline Attachments
 	Plugin URI: http://www.nonverbla.de/blog/wordpress-plugin-inline-attachments/
 	Description: Add a Meta Box containing the Media Panel inside the edit screen. Also adjust wich options should be displayed for attachments (e.g. "Insert Image", "Image Size", "Alignment")
-	Version: 0.9.4
+	Version: 0.9.4.1
 	Author: Basics09
 	Author URI: http://www.basics09.de
 	License: GPL
@@ -145,7 +145,7 @@ class Inline_attachments {
 		wp_enqueue_script('inline-attachments-media-screen');
 	}
 	function add_attachments_bulk_delete_js(){
-		$script_url = $this->dir . "/js/attachments-bulk-delete.js";
+		$script_url = $this->dir . "/js/inline-attachments-bulk-delete.js";
 		wp_register_script('attachments-bulk-delete', $script_url);
 		wp_enqueue_script('attachments-bulk-delete');
 	}
@@ -378,7 +378,7 @@ class Inline_attachments {
 						<?php _e("Cancel", "inlineattachments"); ?>
 					</a>
 				</span>
-				<a class='button bulk-delete-attachment-button' href='<?php echo $this->dir; ?>/php/bulk-delete.php?_wpnonce=<?php echo $bulk_delete_nonce; ?>&post=<?php echo $post_id; ?>' id='delete-all-media'>
+				<a class='button bulk-delete-attachment-button' href='<?php echo $this->dir; ?>/php/inline-attachments-bulk-delete.php?_wpnonce=<?php echo $bulk_delete_nonce; ?>&post=<?php echo $post_id; ?>' id='delete-all-media'>
 					<?php _e("Delete selected Attachments", "inlineattachments"); ?>
 				</a>
 				<span style='display:none;' id='error-messages'>
