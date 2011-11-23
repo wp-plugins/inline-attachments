@@ -3,12 +3,14 @@
 		galleryTabTimeout,
 		ajaxBusy = false,
 		currentMenuOrder,
-		galleryLink;
+		galleryLink,
+		windowLocation;
 	
 	jQuery(document).ready(function(){
 		$ = jQuery;
 		galleryLink = phpGalleryLink;
 		currentMenuOrder = getMenuOrder();
+		windowLocation = window.location.href;
 		// If there is no Gallery tab
 		if($("#tab-gallery").length == 0){
 			$("#sidemenu #tab-type").after('<li id="tab-gallery"></li>');
@@ -22,8 +24,15 @@
 			addAjaxFieldsAutoSave();
 			customizeMediaItemHeads();
 			addKeyboardListeners();
+			setTimeout(addInsertIntoPostHook, 500);
 		}
 	})
+	function addInsertIntoPostHook(){
+		$(".savesend .button").mouseup(function(e){
+			
+			
+		})
+	}
 	function addKeyboardListeners(){
 		$("tr.post_title input").keyup(function(e){
 			$(this).parents(".media-item").find(".filename .title").text($(this).attr("value"));

@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Inline Attachments Deutsch\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-11-21 18:36+0100\n"
-"PO-Revision-Date: 2011-11-21 18:48+0100\n"
+"POT-Creation-Date: 2011-11-24 00:23+0100\n"
+"PO-Revision-Date: 2011-11-24 00:23+0100\n"
 "Last-Translator: Basics09 <info@basics09.de>\n"
 "Language-Team: Rasso Hilber\n"
 "MIME-Version: 1.0\n"
@@ -13,235 +13,192 @@ msgstr ""
 "X-Poedit-Basepath: .\n"
 "X-Poedit-Language: German\n"
 "X-Poedit-Country: GERMANY\n"
-"X-Poedit-SearchPath-0: /Volumes/DataRasso/Users/rassohilber/Desktop/wordpress-plugins/inline-attachments/working-copy-ia\n"
+"X-Poedit-SearchPath-0: /Volumes/DataRasso/Users/rassohilber/Sites/wptest/wp-content/plugins/trunk-inline-attachments\n"
 
-#: /Volumes/DataRasso/Users/rassohilber/Desktop/wordpress-plugins/inline-attachments/working-copy-ia/tags/0.9.1/inline-attachments.php:30
-#: /Volumes/DataRasso/Users/rassohilber/Desktop/wordpress-plugins/inline-attachments/working-copy-ia/tags/0.9.2/inline-attachments.php:30
-#: /Volumes/DataRasso/Users/rassohilber/Desktop/wordpress-plugins/inline-attachments/working-copy-ia/trunk/inline-attachments.php:88
+#: /Volumes/DataRasso/Users/rassohilber/Sites/wptest/wp-content/plugins/trunk-inline-attachments/inline-attachments.php:89
 msgid "Settings"
 msgstr "Einstellungen"
 
-#: /Volumes/DataRasso/Users/rassohilber/Desktop/wordpress-plugins/inline-attachments/working-copy-ia/tags/0.9.1/inline-attachments.php:222
-#: /Volumes/DataRasso/Users/rassohilber/Desktop/wordpress-plugins/inline-attachments/working-copy-ia/tags/0.9.2/inline-attachments.php:243
-#: /Volumes/DataRasso/Users/rassohilber/Desktop/wordpress-plugins/inline-attachments/working-copy-ia/trunk/inline-attachments.php:343
-msgid "Inline Attachments"
-msgstr "Inline Attachments"
-
-#: /Volumes/DataRasso/Users/rassohilber/Desktop/wordpress-plugins/inline-attachments/working-copy-ia/tags/0.9.1/inline-attachments.php:252
-#: /Volumes/DataRasso/Users/rassohilber/Desktop/wordpress-plugins/inline-attachments/working-copy-ia/tags/0.9.2/inline-attachments.php:273
-#: /Volumes/DataRasso/Users/rassohilber/Desktop/wordpress-plugins/inline-attachments/working-copy-ia/trunk/inline-attachments.php:373
-msgid "Sort Order"
-msgstr "Reihenfolge"
-
-#: /Volumes/DataRasso/Users/rassohilber/Desktop/wordpress-plugins/inline-attachments/working-copy-ia/tags/0.9.1/inline-attachments.php:253
-#: /Volumes/DataRasso/Users/rassohilber/Desktop/wordpress-plugins/inline-attachments/working-copy-ia/tags/0.9.2/inline-attachments.php:274
-#: /Volumes/DataRasso/Users/rassohilber/Desktop/wordpress-plugins/inline-attachments/working-copy-ia/trunk/inline-attachments.php:374
-msgid "From URL"
-msgstr "Von einer URL"
-
-#: /Volumes/DataRasso/Users/rassohilber/Desktop/wordpress-plugins/inline-attachments/working-copy-ia/tags/0.9.1/inline-attachments.php:254
-#: /Volumes/DataRasso/Users/rassohilber/Desktop/wordpress-plugins/inline-attachments/working-copy-ia/tags/0.9.2/inline-attachments.php:275
-#: /Volumes/DataRasso/Users/rassohilber/Desktop/wordpress-plugins/inline-attachments/working-copy-ia/trunk/inline-attachments.php:375
-msgid "Media Library"
-msgstr "Mediathek"
-
-#: /Volumes/DataRasso/Users/rassohilber/Desktop/wordpress-plugins/inline-attachments/working-copy-ia/tags/0.9.1/inline-attachments.php:255
-#: /Volumes/DataRasso/Users/rassohilber/Desktop/wordpress-plugins/inline-attachments/working-copy-ia/tags/0.9.2/inline-attachments.php:276
-#: /Volumes/DataRasso/Users/rassohilber/Desktop/wordpress-plugins/inline-attachments/working-copy-ia/trunk/inline-attachments.php:376
-msgid "Edit Image"
-msgstr "Bild bearbeiten"
-
-#: /Volumes/DataRasso/Users/rassohilber/Desktop/wordpress-plugins/inline-attachments/working-copy-ia/tags/0.9.1/inline-attachments.php:256
-#: /Volumes/DataRasso/Users/rassohilber/Desktop/wordpress-plugins/inline-attachments/working-copy-ia/tags/0.9.2/inline-attachments.php:277
-#: /Volumes/DataRasso/Users/rassohilber/Desktop/wordpress-plugins/inline-attachments/working-copy-ia/trunk/inline-attachments.php:377
-msgid "Title"
-msgstr "Titel"
-
-#: /Volumes/DataRasso/Users/rassohilber/Desktop/wordpress-plugins/inline-attachments/working-copy-ia/tags/0.9.1/inline-attachments.php:257
-#: /Volumes/DataRasso/Users/rassohilber/Desktop/wordpress-plugins/inline-attachments/working-copy-ia/tags/0.9.2/inline-attachments.php:278
-#: /Volumes/DataRasso/Users/rassohilber/Desktop/wordpress-plugins/inline-attachments/working-copy-ia/trunk/inline-attachments.php:378
-msgid "Alternate Text"
-msgstr "Alternativtext"
-
-#: /Volumes/DataRasso/Users/rassohilber/Desktop/wordpress-plugins/inline-attachments/working-copy-ia/tags/0.9.1/inline-attachments.php:258
-#: /Volumes/DataRasso/Users/rassohilber/Desktop/wordpress-plugins/inline-attachments/working-copy-ia/tags/0.9.2/inline-attachments.php:279
-#: /Volumes/DataRasso/Users/rassohilber/Desktop/wordpress-plugins/inline-attachments/working-copy-ia/trunk/inline-attachments.php:379
-msgid "Caption"
-msgstr "Beschriftung"
-
-#: /Volumes/DataRasso/Users/rassohilber/Desktop/wordpress-plugins/inline-attachments/working-copy-ia/tags/0.9.1/inline-attachments.php:259
-#: /Volumes/DataRasso/Users/rassohilber/Desktop/wordpress-plugins/inline-attachments/working-copy-ia/tags/0.9.2/inline-attachments.php:280
-#: /Volumes/DataRasso/Users/rassohilber/Desktop/wordpress-plugins/inline-attachments/working-copy-ia/trunk/inline-attachments.php:380
-msgid "Description"
-msgstr "Beschreibung"
-
-#: /Volumes/DataRasso/Users/rassohilber/Desktop/wordpress-plugins/inline-attachments/working-copy-ia/tags/0.9.1/inline-attachments.php:260
-#: /Volumes/DataRasso/Users/rassohilber/Desktop/wordpress-plugins/inline-attachments/working-copy-ia/tags/0.9.2/inline-attachments.php:281
-#: /Volumes/DataRasso/Users/rassohilber/Desktop/wordpress-plugins/inline-attachments/working-copy-ia/trunk/inline-attachments.php:381
-msgid "Link URL"
-msgstr "Link URL"
-
-#: /Volumes/DataRasso/Users/rassohilber/Desktop/wordpress-plugins/inline-attachments/working-copy-ia/tags/0.9.1/inline-attachments.php:261
-#: /Volumes/DataRasso/Users/rassohilber/Desktop/wordpress-plugins/inline-attachments/working-copy-ia/tags/0.9.2/inline-attachments.php:282
-#: /Volumes/DataRasso/Users/rassohilber/Desktop/wordpress-plugins/inline-attachments/working-copy-ia/trunk/inline-attachments.php:382
-msgid "Media tags"
-msgstr "Media tags"
-
-#: /Volumes/DataRasso/Users/rassohilber/Desktop/wordpress-plugins/inline-attachments/working-copy-ia/tags/0.9.1/inline-attachments.php:262
-#: /Volumes/DataRasso/Users/rassohilber/Desktop/wordpress-plugins/inline-attachments/working-copy-ia/tags/0.9.2/inline-attachments.php:283
-#: /Volumes/DataRasso/Users/rassohilber/Desktop/wordpress-plugins/inline-attachments/working-copy-ia/trunk/inline-attachments.php:383
-msgid "Alignment"
-msgstr "Ausrichtung"
-
-#: /Volumes/DataRasso/Users/rassohilber/Desktop/wordpress-plugins/inline-attachments/working-copy-ia/tags/0.9.1/inline-attachments.php:263
-#: /Volumes/DataRasso/Users/rassohilber/Desktop/wordpress-plugins/inline-attachments/working-copy-ia/tags/0.9.2/inline-attachments.php:284
-#: /Volumes/DataRasso/Users/rassohilber/Desktop/wordpress-plugins/inline-attachments/working-copy-ia/trunk/inline-attachments.php:384
-msgid "Image"
-msgstr "Bild"
-
-#: /Volumes/DataRasso/Users/rassohilber/Desktop/wordpress-plugins/inline-attachments/working-copy-ia/tags/0.9.1/inline-attachments.php:263
-#: /Volumes/DataRasso/Users/rassohilber/Desktop/wordpress-plugins/inline-attachments/working-copy-ia/tags/0.9.2/inline-attachments.php:284
-#: /Volumes/DataRasso/Users/rassohilber/Desktop/wordpress-plugins/inline-attachments/working-copy-ia/trunk/inline-attachments.php:384
-msgid "Size"
-msgstr "Größe"
-
-#: /Volumes/DataRasso/Users/rassohilber/Desktop/wordpress-plugins/inline-attachments/working-copy-ia/tags/0.9.1/inline-attachments.php:264
-#: /Volumes/DataRasso/Users/rassohilber/Desktop/wordpress-plugins/inline-attachments/working-copy-ia/tags/0.9.2/inline-attachments.php:285
-#: /Volumes/DataRasso/Users/rassohilber/Desktop/wordpress-plugins/inline-attachments/working-copy-ia/trunk/inline-attachments.php:385
-msgid "Insert into Post"
-msgstr "In Artikel einfügen"
-
-#: /Volumes/DataRasso/Users/rassohilber/Desktop/wordpress-plugins/inline-attachments/working-copy-ia/tags/0.9.1/inline-attachments.php:265
-#: /Volumes/DataRasso/Users/rassohilber/Desktop/wordpress-plugins/inline-attachments/working-copy-ia/tags/0.9.2/inline-attachments.php:286
-#: /Volumes/DataRasso/Users/rassohilber/Desktop/wordpress-plugins/inline-attachments/working-copy-ia/trunk/inline-attachments.php:386
-msgid "Gallery Settings"
-msgstr "Gallerieeinstellungen"
-
-#: /Volumes/DataRasso/Users/rassohilber/Desktop/wordpress-plugins/inline-attachments/working-copy-ia/tags/0.9.1/inline-attachments.php:323
-#: /Volumes/DataRasso/Users/rassohilber/Desktop/wordpress-plugins/inline-attachments/working-copy-ia/tags/0.9.2/inline-attachments.php:344
-#: /Volumes/DataRasso/Users/rassohilber/Desktop/wordpress-plugins/inline-attachments/working-copy-ia/trunk/inline-attachments.php:463
-msgid "Inline Attachments - Settings"
-msgstr "Inline Attachments - Einstellungen"
-
-#: /Volumes/DataRasso/Users/rassohilber/Desktop/wordpress-plugins/inline-attachments/working-copy-ia/tags/0.9.1/inline-attachments.php:347
-#: /Volumes/DataRasso/Users/rassohilber/Desktop/wordpress-plugins/inline-attachments/working-copy-ia/tags/0.9.1/inline-attachments.php:360
-#: /Volumes/DataRasso/Users/rassohilber/Desktop/wordpress-plugins/inline-attachments/working-copy-ia/tags/0.9.2/inline-attachments.php:368
-#: /Volumes/DataRasso/Users/rassohilber/Desktop/wordpress-plugins/inline-attachments/working-copy-ia/tags/0.9.2/inline-attachments.php:381
-#: /Volumes/DataRasso/Users/rassohilber/Desktop/wordpress-plugins/inline-attachments/working-copy-ia/trunk/inline-attachments.php:487
-#: /Volumes/DataRasso/Users/rassohilber/Desktop/wordpress-plugins/inline-attachments/working-copy-ia/trunk/inline-attachments.php:500
-msgid "Post Types"
-msgstr "Post Types"
-
-#: /Volumes/DataRasso/Users/rassohilber/Desktop/wordpress-plugins/inline-attachments/working-copy-ia/tags/0.9.1/inline-attachments.php:347
-#: /Volumes/DataRasso/Users/rassohilber/Desktop/wordpress-plugins/inline-attachments/working-copy-ia/tags/0.9.2/inline-attachments.php:368
-#: /Volumes/DataRasso/Users/rassohilber/Desktop/wordpress-plugins/inline-attachments/working-copy-ia/trunk/inline-attachments.php:487
-msgid "Select the post types you want to display the inline attachments box in."
-msgstr "Wählen Sie die Post-Typen aus, für die Sie Inline Attachments anzeigen wollen."
-
-#: /Volumes/DataRasso/Users/rassohilber/Desktop/wordpress-plugins/inline-attachments/working-copy-ia/tags/0.9.1/inline-attachments.php:348
-#: /Volumes/DataRasso/Users/rassohilber/Desktop/wordpress-plugins/inline-attachments/working-copy-ia/tags/0.9.1/inline-attachments.php:363
-#: /Volumes/DataRasso/Users/rassohilber/Desktop/wordpress-plugins/inline-attachments/working-copy-ia/tags/0.9.2/inline-attachments.php:369
-#: /Volumes/DataRasso/Users/rassohilber/Desktop/wordpress-plugins/inline-attachments/working-copy-ia/tags/0.9.2/inline-attachments.php:384
-#: /Volumes/DataRasso/Users/rassohilber/Desktop/wordpress-plugins/inline-attachments/working-copy-ia/trunk/inline-attachments.php:488
-#: /Volumes/DataRasso/Users/rassohilber/Desktop/wordpress-plugins/inline-attachments/working-copy-ia/trunk/inline-attachments.php:503
-msgid "MetaBox Titles"
-msgstr "MetaBox Beschriftungen"
-
-#: /Volumes/DataRasso/Users/rassohilber/Desktop/wordpress-plugins/inline-attachments/working-copy-ia/tags/0.9.1/inline-attachments.php:348
-#: /Volumes/DataRasso/Users/rassohilber/Desktop/wordpress-plugins/inline-attachments/working-copy-ia/tags/0.9.2/inline-attachments.php:369
-#: /Volumes/DataRasso/Users/rassohilber/Desktop/wordpress-plugins/inline-attachments/working-copy-ia/trunk/inline-attachments.php:488
-msgid "For each post type, you can set the title of the inline attachments box separately."
-msgstr "Für jeden Post-Type können Sie einge eigene Beschriftung festlegen."
-
-#: /Volumes/DataRasso/Users/rassohilber/Desktop/wordpress-plugins/inline-attachments/working-copy-ia/tags/0.9.1/inline-attachments.php:377
-#: /Volumes/DataRasso/Users/rassohilber/Desktop/wordpress-plugins/inline-attachments/working-copy-ia/tags/0.9.2/inline-attachments.php:398
-#: /Volumes/DataRasso/Users/rassohilber/Desktop/wordpress-plugins/inline-attachments/working-copy-ia/trunk/inline-attachments.php:517
-msgid "Media Files"
-msgstr "Medien"
-
-#: /Volumes/DataRasso/Users/rassohilber/Desktop/wordpress-plugins/inline-attachments/working-copy-ia/tags/0.9.1/inline-attachments.php:400
-#: /Volumes/DataRasso/Users/rassohilber/Desktop/wordpress-plugins/inline-attachments/working-copy-ia/tags/0.9.1/inline-attachments.php:417
-#: /Volumes/DataRasso/Users/rassohilber/Desktop/wordpress-plugins/inline-attachments/working-copy-ia/tags/0.9.2/inline-attachments.php:421
-#: /Volumes/DataRasso/Users/rassohilber/Desktop/wordpress-plugins/inline-attachments/working-copy-ia/tags/0.9.2/inline-attachments.php:438
-#: /Volumes/DataRasso/Users/rassohilber/Desktop/wordpress-plugins/inline-attachments/working-copy-ia/trunk/inline-attachments.php:540
-#: /Volumes/DataRasso/Users/rassohilber/Desktop/wordpress-plugins/inline-attachments/working-copy-ia/trunk/inline-attachments.php:577
-msgid "Save Changes"
-msgstr "Änderungen Speichern"
-
-#: /Volumes/DataRasso/Users/rassohilber/Desktop/wordpress-plugins/inline-attachments/working-copy-ia/tags/0.9.1/inline-attachments.php:401
-#: /Volumes/DataRasso/Users/rassohilber/Desktop/wordpress-plugins/inline-attachments/working-copy-ia/tags/0.9.1/inline-attachments.php:418
-#: /Volumes/DataRasso/Users/rassohilber/Desktop/wordpress-plugins/inline-attachments/working-copy-ia/tags/0.9.2/inline-attachments.php:422
-#: /Volumes/DataRasso/Users/rassohilber/Desktop/wordpress-plugins/inline-attachments/working-copy-ia/tags/0.9.2/inline-attachments.php:439
-#: /Volumes/DataRasso/Users/rassohilber/Desktop/wordpress-plugins/inline-attachments/working-copy-ia/trunk/inline-attachments.php:541
-#: /Volumes/DataRasso/Users/rassohilber/Desktop/wordpress-plugins/inline-attachments/working-copy-ia/trunk/inline-attachments.php:578
-msgid "Reset Defaults"
-msgstr "Auf Standard Zurücksetzen"
-
-#: /Volumes/DataRasso/Users/rassohilber/Desktop/wordpress-plugins/inline-attachments/working-copy-ia/tags/0.9.1/inline-attachments.php:403
-#: /Volumes/DataRasso/Users/rassohilber/Desktop/wordpress-plugins/inline-attachments/working-copy-ia/tags/0.9.2/inline-attachments.php:424
-#: /Volumes/DataRasso/Users/rassohilber/Desktop/wordpress-plugins/inline-attachments/working-copy-ia/trunk/inline-attachments.php:544
-msgid "Cleaning up the Attachments Screen"
-msgstr "Den Anhang-Screen aufräumen"
-
-#: /Volumes/DataRasso/Users/rassohilber/Desktop/wordpress-plugins/inline-attachments/working-copy-ia/tags/0.9.1/inline-attachments.php:405
-#: /Volumes/DataRasso/Users/rassohilber/Desktop/wordpress-plugins/inline-attachments/working-copy-ia/tags/0.9.2/inline-attachments.php:426
-#: /Volumes/DataRasso/Users/rassohilber/Desktop/wordpress-plugins/inline-attachments/working-copy-ia/trunk/inline-attachments.php:546
-msgid "Select the options you want to be able to edit inside the attachments screen."
-msgstr "Wählen Sie die Felder aus, die Sie für Anhänge bearbeiten wollen."
-
-#: /Volumes/DataRasso/Users/rassohilber/Desktop/wordpress-plugins/inline-attachments/working-copy-ia/trunk/inline-attachments.php:101
+#: /Volumes/DataRasso/Users/rassohilber/Sites/wptest/wp-content/plugins/trunk-inline-attachments/inline-attachments.php:102
 msgid "Inline Attachments was just activated."
 msgstr "Inline Attachments wurde installiert."
 
-#: /Volumes/DataRasso/Users/rassohilber/Desktop/wordpress-plugins/inline-attachments/working-copy-ia/trunk/inline-attachments.php:101
+#: /Volumes/DataRasso/Users/rassohilber/Sites/wptest/wp-content/plugins/trunk-inline-attachments/inline-attachments.php:102
 msgid "Click here"
 msgstr "Klicken Sie hier"
 
-#: /Volumes/DataRasso/Users/rassohilber/Desktop/wordpress-plugins/inline-attachments/working-copy-ia/trunk/inline-attachments.php:101
+#: /Volumes/DataRasso/Users/rassohilber/Sites/wptest/wp-content/plugins/trunk-inline-attachments/inline-attachments.php:102
 msgid "to adjust the settings."
 msgstr "um die Einstellungen zu bearbeiten."
 
-#: /Volumes/DataRasso/Users/rassohilber/Desktop/wordpress-plugins/inline-attachments/working-copy-ia/trunk/inline-attachments.php:107
+#: /Volumes/DataRasso/Users/rassohilber/Sites/wptest/wp-content/plugins/trunk-inline-attachments/inline-attachments.php:108
 msgid "Warning"
 msgstr "Warnung"
 
-#: /Volumes/DataRasso/Users/rassohilber/Desktop/wordpress-plugins/inline-attachments/working-copy-ia/trunk/inline-attachments.php:108
+#: /Volumes/DataRasso/Users/rassohilber/Sites/wptest/wp-content/plugins/trunk-inline-attachments/inline-attachments.php:109
 msgid "You seem to have the plugin 'Attachments' installed. Due to the very different approach of Inline Attachments, the functionality of 'Attachments' is not supported at the moment."
 msgstr "Sie scheinen das Plugin 'Attachments' installiert zu haben. Aufgrund des sehr anderen Konzepts von 'Inline Attachments' wird die Funktionalität von 'Attachments' im Moment nicht unterstützt."
 
-#: /Volumes/DataRasso/Users/rassohilber/Desktop/wordpress-plugins/inline-attachments/working-copy-ia/trunk/inline-attachments.php:154
+#: /Volumes/DataRasso/Users/rassohilber/Sites/wptest/wp-content/plugins/trunk-inline-attachments/inline-attachments.php:155
 msgid "Gallery"
 msgstr "Gallerie"
 
-#: /Volumes/DataRasso/Users/rassohilber/Desktop/wordpress-plugins/inline-attachments/working-copy-ia/trunk/inline-attachments.php:325
-msgid "Delete selected Attachments"
-msgstr "Ausgewählte Medien löschen"
+#: /Volumes/DataRasso/Users/rassohilber/Sites/wptest/wp-content/plugins/trunk-inline-attachments/inline-attachments.php:368
+msgid "Lightbox"
+msgstr "Lightbox"
 
-#: /Volumes/DataRasso/Users/rassohilber/Desktop/wordpress-plugins/inline-attachments/working-copy-ia/trunk/inline-attachments.php:329
+#: /Volumes/DataRasso/Users/rassohilber/Sites/wptest/wp-content/plugins/trunk-inline-attachments/inline-attachments.php:394
 msgid "Cancel"
 msgstr "Abbrechen"
 
-#: /Volumes/DataRasso/Users/rassohilber/Desktop/wordpress-plugins/inline-attachments/working-copy-ia/trunk/inline-attachments.php:333
+#: /Volumes/DataRasso/Users/rassohilber/Sites/wptest/wp-content/plugins/trunk-inline-attachments/inline-attachments.php:398
+msgid "Delete selected Attachments"
+msgstr "Ausgewählte Medien löschen"
+
+#: /Volumes/DataRasso/Users/rassohilber/Sites/wptest/wp-content/plugins/trunk-inline-attachments/inline-attachments.php:401
 msgid "You need to select some attachments first."
 msgstr "Sie müssen zuerst einige Medien auswählen."
 
-#: /Volumes/DataRasso/Users/rassohilber/Desktop/wordpress-plugins/inline-attachments/working-copy-ia/trunk/inline-attachments.php:397
-msgid "Add functionionality for bulk deletion of attachments (Saves you a lot of time)"
+#: /Volumes/DataRasso/Users/rassohilber/Sites/wptest/wp-content/plugins/trunk-inline-attachments/inline-attachments.php:411
+#: /Volumes/DataRasso/Users/rassohilber/Sites/wptest/wp-content/plugins/trunk-inline-attachments/inline-attachments.php:543
+msgid "Inline Attachments"
+msgstr "Inline Attachments"
+
+#: /Volumes/DataRasso/Users/rassohilber/Sites/wptest/wp-content/plugins/trunk-inline-attachments/inline-attachments.php:441
+msgid "Order"
+msgstr "Reihenfolge"
+
+#: /Volumes/DataRasso/Users/rassohilber/Sites/wptest/wp-content/plugins/trunk-inline-attachments/inline-attachments.php:441
+msgid "Ascending"
+msgstr "Aufsteigend"
+
+#: /Volumes/DataRasso/Users/rassohilber/Sites/wptest/wp-content/plugins/trunk-inline-attachments/inline-attachments.php:441
+msgid "Descending"
+msgstr "Abstrigend"
+
+#: /Volumes/DataRasso/Users/rassohilber/Sites/wptest/wp-content/plugins/trunk-inline-attachments/inline-attachments.php:442
+msgid "From URL"
+msgstr "Von einer URL"
+
+#: /Volumes/DataRasso/Users/rassohilber/Sites/wptest/wp-content/plugins/trunk-inline-attachments/inline-attachments.php:443
+msgid "Media Library"
+msgstr "Mediathek"
+
+#: /Volumes/DataRasso/Users/rassohilber/Sites/wptest/wp-content/plugins/trunk-inline-attachments/inline-attachments.php:444
+msgid "Edit Image"
+msgstr "Bild bearbeiten"
+
+#: /Volumes/DataRasso/Users/rassohilber/Sites/wptest/wp-content/plugins/trunk-inline-attachments/inline-attachments.php:445
+msgid "Title"
+msgstr "Titel"
+
+#: /Volumes/DataRasso/Users/rassohilber/Sites/wptest/wp-content/plugins/trunk-inline-attachments/inline-attachments.php:446
+msgid "Alternate Text"
+msgstr "Alternativtext"
+
+#: /Volumes/DataRasso/Users/rassohilber/Sites/wptest/wp-content/plugins/trunk-inline-attachments/inline-attachments.php:447
+msgid "Caption"
+msgstr "Beschriftung"
+
+#: /Volumes/DataRasso/Users/rassohilber/Sites/wptest/wp-content/plugins/trunk-inline-attachments/inline-attachments.php:448
+msgid "Description"
+msgstr "Beschreibung"
+
+#: /Volumes/DataRasso/Users/rassohilber/Sites/wptest/wp-content/plugins/trunk-inline-attachments/inline-attachments.php:449
+msgid "Link URL"
+msgstr "Link URL"
+
+#: /Volumes/DataRasso/Users/rassohilber/Sites/wptest/wp-content/plugins/trunk-inline-attachments/inline-attachments.php:450
+msgid "Media tags"
+msgstr "Media tags"
+
+#: /Volumes/DataRasso/Users/rassohilber/Sites/wptest/wp-content/plugins/trunk-inline-attachments/inline-attachments.php:451
+msgid "Alignment"
+msgstr "Ausrichtung"
+
+#: /Volumes/DataRasso/Users/rassohilber/Sites/wptest/wp-content/plugins/trunk-inline-attachments/inline-attachments.php:452
+msgid "Image"
+msgstr "Bild"
+
+#: /Volumes/DataRasso/Users/rassohilber/Sites/wptest/wp-content/plugins/trunk-inline-attachments/inline-attachments.php:452
+msgid "Size"
+msgstr "Größe"
+
+#: /Volumes/DataRasso/Users/rassohilber/Sites/wptest/wp-content/plugins/trunk-inline-attachments/inline-attachments.php:453
+msgid "Insert into Post"
+msgstr "In Artikel einfügen"
+
+#: /Volumes/DataRasso/Users/rassohilber/Sites/wptest/wp-content/plugins/trunk-inline-attachments/inline-attachments.php:454
+msgid "Gallery Settings"
+msgstr "Gallerieeinstellungen"
+
+#: /Volumes/DataRasso/Users/rassohilber/Sites/wptest/wp-content/plugins/trunk-inline-attachments/inline-attachments.php:466
+msgid "Add a checkbox for mass deletion to every media item (Saves you a lot of time)"
 msgstr "Funktionalität zur Löschung von mehreren Medien auf einmal aktivieren (Spart eine Menge Zeit)"
 
-#: /Volumes/DataRasso/Users/rassohilber/Desktop/wordpress-plugins/inline-attachments/working-copy-ia/trunk/inline-attachments.php:444
+#: /Volumes/DataRasso/Users/rassohilber/Sites/wptest/wp-content/plugins/trunk-inline-attachments/inline-attachments.php:467
+msgid "Hide Thickbox Buttons"
+msgstr "Thickbox-Buttons verstecken"
+
+#: /Volumes/DataRasso/Users/rassohilber/Sites/wptest/wp-content/plugins/trunk-inline-attachments/inline-attachments.php:467
+msgid "Hide all buttons for opening the attachments screen in the thickbox"
+msgstr "Alle Buttons verstecken, die den Attachments Screen in der Thickbox öffnen würden"
+
+#: /Volumes/DataRasso/Users/rassohilber/Sites/wptest/wp-content/plugins/trunk-inline-attachments/inline-attachments.php:521
 msgid "Options saved."
 msgstr "Einstellungen gespeichert."
 
-#: /Volumes/DataRasso/Users/rassohilber/Desktop/wordpress-plugins/inline-attachments/working-copy-ia/trunk/inline-attachments.php:454
+#: /Volumes/DataRasso/Users/rassohilber/Sites/wptest/wp-content/plugins/trunk-inline-attachments/inline-attachments.php:534
 msgid "All options have been set to their default values."
 msgstr "Alle Optionen wurden auf ihre Ausgangswerte zurückgesetzt."
 
-#: /Volumes/DataRasso/Users/rassohilber/Desktop/wordpress-plugins/inline-attachments/working-copy-ia/trunk/inline-attachments.php:485
+#: /Volumes/DataRasso/Users/rassohilber/Sites/wptest/wp-content/plugins/trunk-inline-attachments/inline-attachments.php:565
 msgid "Post Type Settings"
 msgstr "PostType Einstellungen"
 
-#: /Volumes/DataRasso/Users/rassohilber/Desktop/wordpress-plugins/inline-attachments/working-copy-ia/trunk/inline-attachments.php:562
+#: /Volumes/DataRasso/Users/rassohilber/Sites/wptest/wp-content/plugins/trunk-inline-attachments/inline-attachments.php:567
+#: /Volumes/DataRasso/Users/rassohilber/Sites/wptest/wp-content/plugins/trunk-inline-attachments/inline-attachments.php:580
+msgid "Post Types"
+msgstr "Post Types"
+
+#: /Volumes/DataRasso/Users/rassohilber/Sites/wptest/wp-content/plugins/trunk-inline-attachments/inline-attachments.php:567
+msgid "Select the post types you want to display the inline attachments box in."
+msgstr "Wählen Sie die Post-Typen aus, für die Sie Inline Attachments anzeigen wollen."
+
+#: /Volumes/DataRasso/Users/rassohilber/Sites/wptest/wp-content/plugins/trunk-inline-attachments/inline-attachments.php:568
+#: /Volumes/DataRasso/Users/rassohilber/Sites/wptest/wp-content/plugins/trunk-inline-attachments/inline-attachments.php:583
+msgid "MetaBox Titles"
+msgstr "MetaBox Beschriftungen"
+
+#: /Volumes/DataRasso/Users/rassohilber/Sites/wptest/wp-content/plugins/trunk-inline-attachments/inline-attachments.php:568
+msgid "For each post type, you can set the title of the inline attachments box separately."
+msgstr "Für jeden Post-Type können Sie einge eigene Beschriftung festlegen."
+
+#: /Volumes/DataRasso/Users/rassohilber/Sites/wptest/wp-content/plugins/trunk-inline-attachments/inline-attachments.php:597
+msgid "Media Files"
+msgstr "Medien"
+
+#: /Volumes/DataRasso/Users/rassohilber/Sites/wptest/wp-content/plugins/trunk-inline-attachments/inline-attachments.php:620
+#: /Volumes/DataRasso/Users/rassohilber/Sites/wptest/wp-content/plugins/trunk-inline-attachments/inline-attachments.php:660
+msgid "Save Changes"
+msgstr "Änderungen Speichern"
+
+#: /Volumes/DataRasso/Users/rassohilber/Sites/wptest/wp-content/plugins/trunk-inline-attachments/inline-attachments.php:621
+#: /Volumes/DataRasso/Users/rassohilber/Sites/wptest/wp-content/plugins/trunk-inline-attachments/inline-attachments.php:661
+msgid "Reset Defaults"
+msgstr "Auf Standard Zurücksetzen"
+
+#: /Volumes/DataRasso/Users/rassohilber/Sites/wptest/wp-content/plugins/trunk-inline-attachments/inline-attachments.php:624
+msgid "Cleaning up the Attachments Screen"
+msgstr "Den Anhang-Screen aufräumen"
+
+#: /Volumes/DataRasso/Users/rassohilber/Sites/wptest/wp-content/plugins/trunk-inline-attachments/inline-attachments.php:626
+msgid "Select the options you want to be able to edit inside the attachments screen."
+msgstr "Wählen Sie die Felder aus, die Sie für Anhänge bearbeiten wollen."
+
+#: /Volumes/DataRasso/Users/rassohilber/Sites/wptest/wp-content/plugins/trunk-inline-attachments/inline-attachments.php:642
 msgid "Additional Features"
 msgstr "Zusatzfunktionen"
 
+#~ msgid "Inline Attachments - Settings"
+#~ msgstr "Inline Attachments - Einstellungen"

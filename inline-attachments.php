@@ -3,7 +3,7 @@
 	Plugin Name: Inline Attachments
 	Plugin URI: http://www.nonverbla.de/blog/wordpress-plugin-inline-attachments/
 	Description: Add a Meta Box containing the Media Panel inside the edit screen. Also adjust wich options should be displayed for attachments (e.g. "Insert Image", "Image Size", "Alignment")
-	Version: 0.9.4.1
+	Version: 0.9.5
 	Author: Basics09
 	Author URI: http://www.basics09.de
 	License: GPL
@@ -74,8 +74,8 @@ class Inline_attachments {
 		// This functionality is based on my plugin "attachments bulk delte", so you won't need it if this plugin is activated in your wp installation already.
 		$active_plugins = apply_filters( 'active_plugins', get_option( 'active_plugins' ) );
 		$abd = "attachments-bulk-delete/attachments-bulk-delete.php";
-		$features = get_option("inline_attachments_features");
-		if (!in_array($abd, $active_plugins) && $features[0][1]){
+		$enabled = get_option("ia_bulk_delete_enabled");
+		if (!in_array($abd, $active_plugins) && $enabled){
 			return true;
 		}
 	}
@@ -338,6 +338,11 @@ class Inline_attachments {
 				position: relative;
 				line-height: 0px;
 			}
+			<?php
+				if(get_option("ia_hide_thickbox_buttons") == true){
+					echo "\n\t\t#open_attachments_lightbox,#wp-content-media-buttons,#media-buttons {display: none;}";
+				}
+			?>
 		</style>
 	<?php }
 	function inline_attachments_box_inner($post, $content_block) { ?>
@@ -438,9 +443,9 @@ class Inline_attachments {
 				array("Tab “".__("Media Library")."”", "#media-upload #tab-library", false),
 				array(__("Edit Image"), ".media-item-info .button", false),
 				array(__("Title"), ".slidetoggle .post_title", true),
-				array(__("Alternate Text"), ".slidetoggle .image_alt", true),
+				array(__("Alternate Text"), ".slidetoggle .image_alt", false),
 				array(__("Caption"), ".slidetoggle .post_excerpt", false),
-				array(__("Description"), ".slidetoggle .post_content", false),
+				array(__("Description"), ".slidetoggle .post_content", true),
 				array(__("Link URL"), ".slidetoggle .url", false),
 				array(__("Media tags"), ".slidetoggle .media_tag", false),
 				array(__("Alignment"), ".slidetoggle .align", false),
@@ -450,20 +455,23 @@ class Inline_attachments {
 			);
 			
 			$inline_attachments_media_elements = get_option("inline_attachments_media_elements");
-			if(!$inline_attachments_media_elements){
+			if(!$inline_attachments_media_elements || count($inline_attachments_media_elements) != count($inline_attachments_media_elements)){
 				$inline_attachments_media_elements = $default_inline_attachments_media_elements;
 			}
 			
 			
-			// Default Features
+			// Additional Features
 			
-			$default_inline_attachments_features = array(
-				array(__("Add functionionality for bulk deletion of attachments (Saves you a lot of time)", "inlineattachments"), true)
+			$inline_attachments_features = array(
+				array("<strong>Bulk Delete:</strong> " . __("Add a checkbox for mass deletion to every media item (Saves you a lot of time)", "inlineattachments"), "ia_bulk_delete_enabled", true),
+				array("<strong>".__("Hide Thickbox Buttons", "inlineattachments").":</strong> " . __("Hide all buttons for opening the attachments screen in the thickbox", "inlineattachments"), "ia_hide_thickbox_buttons", false)
 			);
-			
-			$inline_attachments_features = get_option("inline_attachments_features");
-			if(!$inline_attachments_features){
-				$inline_attachments_features = $default_inline_attachments_features;
+			// Filling in default values, if the options aren't set yet
+			foreach($inline_attachments_features as $feature){
+				$option = get_option($feature[1]);
+				if(!$option){
+					update_option($feature[1], $feature[2]);
+				}
 			}
 
 			// If the user clicked on “Save Changes”:
@@ -475,7 +483,12 @@ class Inline_attachments {
 					delete_option("inline_attachments_post_types");
 					delete_option("inline_attachments_box_titles");
 					delete_option("inline_attachments_media_elements");
-					delete_option("inline_attachments_features");
+					$count = 0;
+					foreach($inline_attachments_features as $feature){
+						delete_option($feature[1]);
+						$count++;
+					}
+					
 					
 					
 					// Enable / Disable Meta Boxes for Post Types
@@ -500,21 +513,24 @@ class Inline_attachments {
 					
 					$count = 0;
 					foreach($inline_attachments_features as $feature){
-						$inline_attachments_features[$count][1] = $_POST["features"][$count] ? $_POST["features"][$count] : false;
+						$enabled = $_POST["features"][$count] == true ? $_POST["features"][$count] : false;
+						update_option($feature[1], $enabled);
 						$count ++;
 					}
-					update_option("inline_attachments_features", $inline_attachments_features);
 					
 					$message = __("Options saved.", "inlineattachments");
 				} elseif( $_POST['action'] == "inline_attachments_options_save" && $_POST['doaction_reset'] ){
 					$inline_attachments_post_types = array();
 					$inline_attachments_box_titles = array();
 					$inline_attachments_media_elements = $default_inline_attachments_media_elements;
-					$inline_attachments_features = $default_inline_attachments_features;
 					update_option("inline_attachments_post_types", $inline_attachments_post_types);
 					update_option("inline_attachments_box_titles", $inline_attachments_box_titles);
 					update_option("inline_attachments_media_elements", $inline_attachments_media_elements);
-					update_option("inline_attachments_features", $inline_attachments_features);
+					$count = 0;
+					foreach($inline_attachments_features as $feature){
+						update_option($feature[1], $feature[2]);
+						$count ++;
+					}
 					$message = __("All options have been set to their default values.", "inlineattachments");
 				}
 			}
@@ -631,8 +647,11 @@ class Inline_attachments {
 						$count ++; 
 					?>
 					<li>
-						<input <?php echo ($feature[1] == true ? ' checked="checked"' : ''); ?> id="features[<?php echo $count; ?>]" type="checkbox" value="true" name="features[<?php echo $count; ?>]">
-						<label for="features[<?php echo $count; ?>]"><?php echo $feature[0]; ?></label>
+						<?php 
+							$enabled = get_option($feature[1]);
+						?>
+						<input <?php echo ($enabled == true ? ' checked="checked"' : ''); ?> id="features[<?php echo $count; ?>]" type="checkbox" value="true" name="features[<?php echo $count; ?>]">
+						<label for="features[<?php echo $count; ?>]"><?php echo $inline_attachments_features[$count][0]; ?></label>
 					</li>
 					<?php endforeach; ?>
 				</ul>

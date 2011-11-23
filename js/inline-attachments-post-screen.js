@@ -93,7 +93,12 @@
 	}
 	function autoAnimateHeight(){
 		var form = iframeContents.find('form.media-upload-form');
-		contentHeight = form.position().top + form.height() + parseInt(form.css('margin-bottom')) + 30;
+		if(form.length > 0){
+			contentHeight = form.position().top + form.height() + parseInt(form.css('margin-bottom')) + 30;
+		} else {
+			contentHeight = minHeight;
+		}
+		
 		animateHeight(contentHeight);
 	}
 })();
