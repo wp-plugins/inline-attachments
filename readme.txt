@@ -9,8 +9,8 @@ Author: Nonverbla
 Donate link: http://www.nonverbla.de/blog/wordpress-plugin-inline-attachments/
 Requires at least: 3.0
 Tested up to: 3.2
-Stable tag: 0.9.4
-Version: 0.9.4
+Stable tag: 0.9.4.1
+Version: 0.9.4.1
 
 Shows attachments directly on the post edit screen. Also gives you full control over image edit options.
 
@@ -45,6 +45,8 @@ Due to it's very different approach, *Inline Attachments* does **not** support t
 2. The Inline Attachments Options Screen
 
 == Upgrade Notice ==
+= 0.9.4.1 =
+Bugfix: broken paths to files
 = 0.9.4 =
 * Added localization and German translation
 * Added the functionality of my plugin [Attachments Bulk Delete](http://www.nonverbla.de/blog/wordpress-plugin-inline-attachments/). I like having everything in the same place ;)
