@@ -176,7 +176,7 @@ class Inline_attachments {
 	function add_media_screen_css(){?>
 		<style type="text/css" media="screen">
 			/* This CSS comes from inline attachments and customizes the media screen */
-			#media-upload .widefat {
+			#gallery-form .widefat {
 				width: 100% !important;
 				border-radius: 3px 3px 0px 0px;
 				border-bottom: 0px none;
@@ -184,13 +184,18 @@ class Inline_attachments {
 			}
 			#media-upload #media-items {
 				width: 100% !important;
-				border-style: none !important;
-				border-top: 1px solid #DFDFDF !important;
+				border: 0px none;
 				min-width: 500px !important;
 			}
-			#media-upload .media-item {
+			#image-form #media-items {
+				margin-top: 10px !important;
+				border-top: 0px none;
+			}
+			#gallery-form .media-item {
 				border: 1px solid #DFDFDF  !important;
 				border-top: 0px none  !important;
+			}
+			#media-upload .media-item {
 				padding-right: 2px  !important;
 				width: auto;
 				min-width: 488px !important;
