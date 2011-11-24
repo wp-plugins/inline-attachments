@@ -40,15 +40,15 @@ If you have comments or questions, please go to the official plugin page: [www.n
 
 = Tested on =
 
-(OSX) Safari :)
-(OSX) Firefox :)
-(OSX) Chrome :)
-(OSX) Opera :)
-(WIN) Firefox :)
-(WIN) Chrome :)
-(WIN) IE 9 :)
-(WIN) IE 8 :)
-(WIN) IE 7 :/
+* (OSX) Safari :)
+* (OSX) Firefox :)
+* (OSX) Chrome :)
+* (OSX) Opera :)
+* (WIN) Firefox :)
+* (WIN) Chrome :)
+* (WIN) IE 9 :)
+* (WIN) IE 8 :)
+* (WIN) IE 7 :/
 
 = Please Note =
 
