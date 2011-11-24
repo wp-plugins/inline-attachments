@@ -22,6 +22,7 @@ Shows the media upload and gallery screen directly on the post edit screen. Also
 * Provides an interface to hide unnecessary stuff on the media screen (e.g. "Insert Into Post" Button, Size, Alignment, …)
 * Adds a checkbox to every attachment and a button to delete all checked Attachments at once
 * Posts, Pages and Custom Post Types supported (selectable)
+* AJAX-Autosaving of all changes you make to media metadata (e.g. menu order, title, description, …)
 * Designed to seamlessly blend in with the native Wordpress admin style
 
 = Long Version =
