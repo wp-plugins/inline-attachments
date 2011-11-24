@@ -3,7 +3,7 @@
 Contributors: Nonverbla
 Plugin Name: Inline Attachments
 Plugin URI: http://www.nonverbla.de/blog/wordpress-plugin-inline-attachments/
-Tags: attachments, inline, thickbox, meta box, adjust, options, admin, bulk, delete, image, checkbox, ajax
+Tags: attachments, inline, thickbox, meta box, adjust, options, admin, bulk, delete, image, checkbox, ajax, media, upload
 Author URI: http://www.nonverbla.de/
 Author: Nonverbla
 Donate link: http://www.nonverbla.de/blog/wordpress-plugin-inline-attachments/
@@ -12,7 +12,7 @@ Tested up to: 3.2
 Stable tag: 0.9.5
 Version: 0.9.5
 
-Shows attachments directly on the post edit screen. Also gives you full control over image edit options.
+Shows the media upload and gallery screen directly on the post edit screen. Also gives you full control over image edit options, bulk delete included.
 
 == Description ==
 
