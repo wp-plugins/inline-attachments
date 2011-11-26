@@ -12,7 +12,7 @@ Tested up to: 3.2
 Stable tag: 0.9.5
 Version: 0.9.5
 
-Shows the media upload and gallery screen directly on the post edit screen. Also gives you full control over image edit options.
+Put the focus in the admin area of Wordpress on media files. Functionally and visually.
 
 == Description ==
 
