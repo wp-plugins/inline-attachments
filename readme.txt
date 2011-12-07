@@ -55,8 +55,8 @@ If you have comments or questions, please go to the official plugin page: [www.n
 
 = Translations (included with the plugin) =
 
-* French
-* German
+* French (by Olivier)
+* German (by me)
 
 = Please Note =
 
