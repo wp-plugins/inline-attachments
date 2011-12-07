@@ -9,8 +9,8 @@ Author: Nonverbla
 Donate link: http://www.nonverbla.de/blog/wordpress-plugin-inline-attachments/
 Requires at least: 3.0
 Tested up to: 3.2
-Stable tag: 0.9.5
-Version: 0.9.5
+Stable tag: 0.9.6
+Version: 0.9.6
 
 Put the focus in the admin area of Wordpress on media files. Functionally and visually.
 
@@ -23,6 +23,8 @@ Put the focus in the admin area of Wordpress on media files. Functionally and vi
 * Adds a checkbox to every attachment and a button to delete all checked Attachments at once
 * Posts, Pages and Custom Post Types supported (selectable)
 * AJAX-Autosaving of all changes you make to media metadata (e.g. menu order, title, description, …)
+* If uploading a bulk of files, maintains the order they had when you selected them on your machine
+* Button to invert the current order of media files (first becomes last, second becomes second last, …)
 * Designed to seamlessly blend in with the native Wordpress admin style
 
 = Long Version =
@@ -51,14 +53,17 @@ If you have comments or questions, please go to the official plugin page: [www.n
 * (WIN) IE 8 :)
 * (WIN) IE 7 :/
 
+= Translations (included with the plugin) =
+
+* French
+* German
+
 = Please Note =
 
 * Due to it's very different approach, *Inline Attachments* **does not** support the functionality of the plugin *Attachments*.
 * I found no possible way to catch the "Insert into Post" javascript-action. But I don't like this button, anyway, so just don't activate it ;)
 
-= Keep it alive =
-
-Please rate the plugin and post comments, if anything doesn't work as expected.
+= Please rate the plugin and post comments, if anything doesn't work as expected. =
 
 == Installation ==
 
@@ -74,6 +79,10 @@ Please rate the plugin and post comments, if anything doesn't work as expected.
 
 == Changelog ==
 
+= 0.9.6 =
+* Maintains the order of uploaded files now, and doesn't reverse it like it used to do
+* Added functionality to invert order of attachments with one click
+* Added option to also hide the “show / hide” buttons in the media screen
 = 0.9.5 =
 * Added an option to hide all Thickbox-Buttons
 * WP 3.3 compatibility check

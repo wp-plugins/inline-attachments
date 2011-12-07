@@ -19,18 +19,51 @@
 			checkIfMoreThanZero();
 		} else if($("#tab-gallery a").hasClass("current") && $(".media-item").length > 1) {
 			// If we are on the gallery screen
+			putMenuOrderAfterShowHide();
+			addInvertOrderButton();
+			reverseInitialOrder();
 			saveAjax();
 			addAjaxOrderAutoSave();
 			addAjaxFieldsAutoSave();
 			customizeMediaItemHeads();
 			addKeyboardListeners();
-			setTimeout(addInsertIntoPostHook, 500);
 		}
 	})
-	function addInsertIntoPostHook(){
-		$(".savesend .button").mouseup(function(e){
+	function putMenuOrderAfterShowHide(){
+		$(".media-item").each(function(){
+			$(this).find(".menu_order").prependTo($(this));
+		})
+	}
+	function addInvertOrderButton(){
+		$(".widefat thead tr").append("<th class='invert-order-head'></th>");
+		$("#invertHolder").appendTo(".widefat .invert-order-head").css("display", "block");
+		$("#invertOrderButton").click(function(){
+			var items = new Array();
+			$(".media-item").each(function(index){
+				items.push($(this));
+			})
+			reverseOrder(items);
+			$(".media-item").addClass("updated-media-item");
 			
-			
+			saveAjax();
+		})
+		$("thead .actions-head, thead .order-head").remove();
+	}
+	function reverseInitialOrder(){
+		// I want uploaded items to stay in the order they had on my computer
+		var blankItems = new Array();
+		$(".media-item").each(function(index){
+			var order = parseInt($(this).find(".menu_order_input").attr("value"));
+			if(isNaN(order)){
+				blankItems.push($(this));
+			}
+		})
+		reverseOrder(blankItems);
+	}
+	function reverseOrder(items){
+		items.reverse();
+		$(items).each(function(){
+			$(this).appendTo($("#media-items"));
 		})
 	}
 	function addKeyboardListeners(){
@@ -39,7 +72,6 @@
 		})
 	}
 	function customizeMediaItemHeads(){
-		//$(".media-item .toggle").remove();
 		$(".media-item .menu_order input").attr("readonly", "readonly");
 	}
 	// Checks for new uploaded files and adds the gallery tab, if there are more then 0 files uploaded

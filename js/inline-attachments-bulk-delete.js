@@ -69,7 +69,7 @@
 		// add a checkbox to every media item
 		$(".media-item").each(function(index) {
 			var id = $(this).attr('id').split("media-item-")[1];
-			$(this).find(".describe-toggle-on").before("<span class='delete_me'><input type='checkbox' value='"+id+"'></input></span>");
+			$(this).prepend("<span class='delete_me'><input type='checkbox' value='"+id+"'></input></span>");
 		})
 		$(".delete_me").css({
 			"display": "block",

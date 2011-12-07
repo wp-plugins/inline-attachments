@@ -3,7 +3,7 @@
 	Plugin Name: Inline Attachments
 	Plugin URI: http://www.nonverbla.de/blog/wordpress-plugin-inline-attachments/
 	Description: Add a Meta Box containing the Media Panel inside the edit screen. Also adjust wich options should be displayed for attachments (e.g. "Insert Image", "Image Size", "Alignment")
-	Version: 0.9.5
+	Version: 0.9.6
 	Author: Basics09
 	Author URI: http://www.basics09.de
 	License: GPL
@@ -55,9 +55,9 @@ class Inline_attachments {
 				add_action('admin_head', array($this,'add_media_screen_css'));
 				//add_action("admin_head", array($this, "add_description_tinymce"));
 				add_action('admin_head', array($this,'javascript_gallery_link'));
+				add_action('admin_head', array($this, "add_ui_elements"));
 				// Bulk Delete
 				if($this->check_if_bulk_delete_enabled()) {
-					add_action('admin_head', array($this, "add_attachments_bulk_delete"));
 					add_action('init', array($this,'add_attachments_bulk_delete_js'));
 				}
 			} elseif(in_array($GLOBALS['pagenow'], array('post.php', 'post-new.php'))){
@@ -173,7 +173,7 @@ class Inline_attachments {
 			));
 		}
 	}
-	function add_media_screen_css(){?>
+	function add_media_screen_css(){ ?>
 		<style type="text/css" media="screen">
 			/* This CSS comes from inline attachments and customizes the media screen */
 			#gallery-form .widefat {
@@ -200,12 +200,18 @@ class Inline_attachments {
 				width: auto;
 				min-width: 488px !important;
 				cursor: default !important;
+				overflow: hidden;
 			}
 			#gallery-form {
 				margin-top: 13px !important;
 			}
 			#gallery-form .media-item .filename {
 				cursor: move !important;
+			}
+			#gallery-form .media-item .pinkynail {
+				max-width: 80px !important;
+				max-height: 36px !important;
+				margin: 1px 0px 0px 0px !important;
 			}
 			#media-upload .menu_order {
 				text-align: center;
@@ -288,6 +294,28 @@ class Inline_attachments {
 				margin: 0px 8px 0px 5px;
 				display: none;
 				padding-left: 10px !important;
+			}
+			thead .bulk-delete-head,
+			thead .invert-order-head {
+				width: 25px !important;
+				position: relative;
+			}
+			#invertOrderButton {
+				display: block;
+				width: 25px;
+				height: 20px;
+				overflow: hidden;
+				white-space: nowrap;
+				text-indent: -1000px;
+				background: url("<?php echo $this->dir; ?>/img/invert.gif") no-repeat 1px 3px;
+				opacity: 0.6;
+				-moz-opacity: 0.6;
+				filter:alpha(opacity=60);
+			}
+			#invertOrderButton:hover {
+				opacity: 1;
+				-moz-opacity: 1;
+				filter:alpha(opacity=1);
 			}
 		</style>
 	<?php }
@@ -379,19 +407,11 @@ class Inline_attachments {
 		<?php 
 	} 
 	/////////////////////////////////////////////////////////////////////////
-	// Bulk Delete UI
-	function add_attachments_bulk_delete(){
-		$post_id = $_GET["post_id"];
+	// ADD UI Elements
+	function add_ui_elements(){ ?>
 
-		$images = get_children(array(
-			'post_parent' => $post_id,
-			'post_mime_type' => 'image'
-		));
-		$image_count = count($images);
-
-		$bulk_delete_nonce = wp_create_nonce ('attachments-bulk-delete-nonce');
-
-		if($image_count > 0){ ?>
+		<?php $bulk_delete_nonce = wp_create_nonce ('attachments-bulk-delete-nonce'); ?>
+			<div style="display: none;" id='invertHolder'><a id='invertOrderButton' href='#' title='<?php _e("Invert Order", "inlineattachments"); ?>'><?php _e("Invert Order", "inlineattachments"); ?></a></div>
 			<span style='display: none;' id='bulk-delete-ui-wrapper'>
 				<span style='display: none;' id='current-post-id'><?php echo $post_id; ?></span>
 				<span id='cancel-delete-all-media-wrapper' style='display: none;'>
@@ -407,7 +427,7 @@ class Inline_attachments {
 				</span>
 				<img id='bulk-delete-ajax-loader' src='images/wpspin_light.gif' alt='' />
 			</span>
-		<?php }
+		<?php 
 	}
 	/////////////////////////////////////////////////////////////////////////
 	// Inline Attachments Options Page
@@ -447,6 +467,7 @@ class Inline_attachments {
 				array("Tab “".__("From URL")."”", "#media-upload #tab-type_url", false),
 				array("Tab “".__("Media Library")."”", "#media-upload #tab-library", false),
 				array(__("Edit Image"), ".media-item-info .button", false),
+				array(__("Show") . " / " . __("Hide"), "a.describe-toggle-on, a.describe-toggle-off", true),
 				array(__("Title"), ".slidetoggle .post_title", true),
 				array(__("Alternate Text"), ".slidetoggle .image_alt", false),
 				array(__("Caption"), ".slidetoggle .post_excerpt", false),
@@ -463,7 +484,6 @@ class Inline_attachments {
 			if(!$inline_attachments_media_elements || count($inline_attachments_media_elements) != count($inline_attachments_media_elements)){
 				$inline_attachments_media_elements = $default_inline_attachments_media_elements;
 			}
-			
 			
 			// Additional Features
 			
