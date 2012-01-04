@@ -8,7 +8,7 @@ Author URI: http://www.nonverbla.de/
 Author: Nonverbla
 Donate link: http://www.nonverbla.de/blog/wordpress-plugin-inline-attachments/
 Requires at least: 3.0
-Tested up to: 3.2
+Tested up to: 3.3
 Stable tag: 0.9.6
 Version: 0.9.6
 
@@ -79,8 +79,6 @@ If you have comments or questions, please go to the official plugin page: [www.n
 
 == Changelog ==
 
-= 0.9.7 =
-* Compatibility with the Plugin "Developers Custom Fields"
 = 0.9.6 =
 * Maintains the order of uploaded files now, and doesn't reverse it like it used to do
 * Added functionality to invert order of attachments with one click
