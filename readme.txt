@@ -79,6 +79,8 @@ If you have comments or questions, please go to the official plugin page: [www.n
 
 == Changelog ==
 
+= 0.9.7 =
+* Compatibility with the Plugin "Developers Custom Fields"
 = 0.9.6 =
 * Maintains the order of uploaded files now, and doesn't reverse it like it used to do
 * Added functionality to invert order of attachments with one click
