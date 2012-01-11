@@ -9,8 +9,8 @@ Author: Nonverbla
 Donate link: http://www.nonverbla.de/blog/wordpress-plugin-inline-attachments/
 Requires at least: 3.0
 Tested up to: 3.3
-Stable tag: 0.9.6
-Version: 0.9.6
+Stable tag: 0.9.7
+Version: 0.9.7
 
 Put the focus in the admin area of Wordpress on media files. Functionally and visually.
 
@@ -79,6 +79,9 @@ If you have comments or questions, please go to the official plugin page: [www.n
 
 == Changelog ==
 
+= 0.9.7 =
+* Don't show the bulk delete checkbox on media.php, just on media-upload.php
+* Also disable .image_url on media.php, if File URL is disabled.
 = 0.9.6 =
 * Maintains the order of uploaded files now, and doesn't reverse it like it used to do
 * Added functionality to invert order of attachments with one click

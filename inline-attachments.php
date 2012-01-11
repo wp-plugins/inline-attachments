@@ -3,7 +3,7 @@
 	Plugin Name: Inline Attachments
 	Plugin URI: http://www.nonverbla.de/blog/wordpress-plugin-inline-attachments/
 	Description: Add a Meta Box containing the Media Panel inside the edit screen. Also adjust wich options should be displayed for attachments (e.g. "Insert Image", "Image Size", "Alignment")
-	Version: 0.9.6
+	Version: 0.9.7
 	Author: Basics09
 	Author URI: http://www.basics09.de
 	License: GPL
@@ -57,7 +57,7 @@ class Inline_attachments {
 				add_action('admin_head', array($this,'javascript_gallery_link'));
 				add_action('admin_head', array($this, "add_ui_elements"));
 				// Bulk Delete
-				if($this->check_if_bulk_delete_enabled()) {
+				if($this->check_if_bulk_delete_enabled() && $GLOBALS['pagenow'] == 'media-upload.php') {
 					add_action('init', array($this,'add_attachments_bulk_delete_js'));
 				}
 			} elseif(in_array($GLOBALS['pagenow'], array('post.php', 'post-new.php'))){
@@ -127,7 +127,7 @@ class Inline_attachments {
 		$count = 0;
 		if($inline_attachments_post_types){
 			foreach($inline_attachments_post_types as $pt) {
-				add_meta_box('inline_attachments', $inline_attachments_box_titles[$count], array($this, 'inline_attachments_box_inner'), $pt, 'normal', 'high');
+				add_meta_box('inline_attachments', $inline_attachments_box_titles[$count], array($this, 'inline_attachments_box_inner'), $pt, 'normal', 'low');
 				$count ++;
 			}
 		}
@@ -472,7 +472,7 @@ class Inline_attachments {
 				array(__("Alternate Text"), ".slidetoggle .image_alt", false),
 				array(__("Caption"), ".slidetoggle .post_excerpt", false),
 				array(__("Description"), ".slidetoggle .post_content", true),
-				array(__("Link URL"), ".slidetoggle .url", false),
+				array(__("Link URL"), ".slidetoggle .url, .slidetoggle .image_url", false),
 				array(__("Media tags"), ".slidetoggle .media_tag", false),
 				array(__("Alignment"), ".slidetoggle .align", false),
 				array(__("Image") . strtolower(__("Size")), ".slidetoggle .image-size", false),
