@@ -3,7 +3,7 @@
 	Plugin Name: Inline Attachments
 	Plugin URI: http://www.nonverbla.de/blog/wordpress-plugin-inline-attachments/
 	Description: Add a Meta Box containing the Media Panel inside the edit screen. Also adjust wich options should be displayed for attachments (e.g. "Insert Image", "Image Size", "Alignment")
-	Version: 0.9.7
+	Version: 0.9.8
 	Author: Basics09
 	Author URI: http://www.basics09.de
 	License: GPL
@@ -51,14 +51,14 @@ class Inline_attachments {
 			
 			if(in_array($GLOBALS['pagenow'], array('media-upload.php', 'media.php'))){
 				// if this is the media screen
-				add_action('init', array($this,'add_media_screen_js'));
+				add_action('init', array($this,'add_media_screen_js'), 100);
 				add_action('admin_head', array($this,'add_media_screen_css'));
 				//add_action("admin_head", array($this, "add_description_tinymce"));
 				add_action('admin_head', array($this,'javascript_gallery_link'));
 				add_action('admin_head', array($this, "add_ui_elements"));
 				// Bulk Delete
 				if($this->check_if_bulk_delete_enabled() && $GLOBALS['pagenow'] == 'media-upload.php') {
-					add_action('init', array($this,'add_attachments_bulk_delete_js'));
+					add_action('init', array($this,'add_attachments_bulk_delete_js'), 100);
 				}
 			} elseif(in_array($GLOBALS['pagenow'], array('post.php', 'post-new.php'))){
 				// if this is the post edit screen
@@ -333,9 +333,9 @@ class Inline_attachments {
 				border-top: 1px solid #dadada;
 			}
 			#inline_attachments_footer a.resizeButton {
-				background: url("images/resize.gif") no-repeat scroll right bottom transparent;
-				cursor: se-resize;
-				display: block !important;
+				/*background: url("images/resize.gif") no-repeat scroll right bottom transparent;
+				cursor: se-resize;*/
+				display: none !important;
 				margin: 2px 3px;
 				position: relative;
 				width: 12px;
@@ -345,6 +345,7 @@ class Inline_attachments {
 			#inline_attachments iframe {
 				width: 100%;
 				border: 0px none;
+				overflow: hidden;
 			}
 			#inline_attachments .inside {
 				padding: 0px;

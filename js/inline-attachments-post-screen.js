@@ -5,7 +5,8 @@
 		minHeight = 100,
 		contentHeight,
 		maxInitHeight,
-		iframeContents;
+		iframeContents,
+		animateHeightInterval;
 	
 	jQuery(document).ready(function(){
 		$ = jQuery;
@@ -14,12 +15,16 @@
 		$("#inline_attachments h3:first").append("<img src='images/wpspin_light.gif' class='waiting' alt='' />")
 		iframe.load(function(){
 			iframeContents = iframe.contents();
-			addIframeScaling();
+			//addIframeScaling();
 			addSavePostHook();
 			$("#inline_attachments h3 .waiting").hide("fast");
+			clearInterval(animateHeightInterval);
+			animateHeightInterval = setInterval(autoAnimateHeight, 1200);
+			autoAnimateHeight();
 		});
-		addResize();
+		//addResize();
 		$("#open_attachments_lightbox").appendTo("#inline_attachments");
+		
 		//tb_init('a.thickbox, area.thickbox, input.thickbox');
 	})
 	function addSavePostHook(){
@@ -73,9 +78,7 @@
 		});
 	}
 	function adjustHeight(h){
-		
 		if(h < minHeight) h = minHeight;
-		
 		wrapper.css("height", (h+17) + "px");
 		iframe.css("height", h + "px");
 	}
@@ -95,10 +98,9 @@
 		var form = iframeContents.find('form.media-upload-form');
 		if(form.length > 0){
 			contentHeight = form.position().top + form.height() + parseInt(form.css('margin-bottom')) + 30;
-		} else {
-			contentHeight = minHeight;
 		}
-		
-		animateHeight(contentHeight);
+		if(contentHeight > 70){
+			animateHeight(contentHeight);
+		}
 	}
 })();

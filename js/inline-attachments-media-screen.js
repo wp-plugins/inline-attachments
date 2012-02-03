@@ -84,7 +84,12 @@
 	}
 	// Autosaving of changed fields on blur
 	function addAjaxFieldsAutoSave(){
-		$(".slidetoggle input, .slidetoggle textarea").change(function(){
+		$(".media-item input").change(function(){
+			$(".updated-media-item").removeClass("updated-media-item");
+			$(this).parents(".media-item").addClass("updated-media-item");
+			saveAjax();
+		})
+		$(".media-item input:text, .media-item textarea").blur(function(){
 			$(".updated-media-item").removeClass("updated-media-item");
 			$(this).parents(".media-item").addClass("updated-media-item");
 			saveAjax();
