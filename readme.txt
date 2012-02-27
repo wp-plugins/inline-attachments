@@ -9,8 +9,8 @@ Author: Nonverbla
 Donate link: http://www.nonverbla.de/blog/wordpress-plugin-inline-attachments/
 Requires at least: 3.0
 Tested up to: 3.3
-Stable tag: 0.9.8
-Version: 0.9.8
+Stable tag: 0.9.9
+Version: 0.9.9
 
 Put the focus in the admin area of Wordpress on media files. Functionally and visually.
 
@@ -79,6 +79,8 @@ If you have comments or questions, please go to the official plugin page: [www.n
 
 == Changelog ==
 
+= 0.9.9 =
+* Fixed a bug when redirecting to upload panel after deleting all attachments at once.
 = 0.9.8 =
 * Improvements on the automatic height adjustment of the iframe
 * BugFix for auto-ajax-saving on blur of textareas and text inputs

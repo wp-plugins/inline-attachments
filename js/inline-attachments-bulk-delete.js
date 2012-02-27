@@ -57,9 +57,11 @@
 			var loc = window.location.href;
 			var rootUrl = loc.split('?')[0];
 			redirectUrl = loc;
+			var afterPostId = loc.split("post_id=")[1];
+			var postId = afterPostId.split("&")[0];
 			// redirect to upload form, if all attachments were deleted
 			if($(".delete_me input:checked").length == $(".delete_me input").length){
-				redirectUrl = rootUrl + "?post_id=" + $('#current-post-id').text();
+				redirectUrl = rootUrl + "?type=file&tab=type&is_inline=1&post_id=" + postId;
 			}
 			window.location.href = redirectUrl;
 			$('#inline_attachments iframe', top.document).attr("src", redirectUrl);
