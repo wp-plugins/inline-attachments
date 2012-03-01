@@ -27,8 +27,19 @@
 			addAjaxFieldsAutoSave();
 			customizeMediaItemHeads();
 			addKeyboardListeners();
+			hideSortButtons();
 		}
 	})
+	function hideSortButtons(){
+		var showHideAllSpan = $('#sort-buttons span:first');
+		if(!showHideAllSpan.length) return false;
+		showHideAllSpan.css({
+			"margin-right": 0
+		})
+		$('#sort-buttons').after(showHideAllSpan);
+		$('#sort-buttons').html("");
+		$('#sort-buttons').append(showHideAllSpan);
+	}
 	function putMenuOrderAfterShowHide(){
 		$(".media-item").each(function(){
 			$(this).find(".menu_order").prependTo($(this));
