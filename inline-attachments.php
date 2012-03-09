@@ -3,7 +3,7 @@
 	Plugin Name: Inline Attachments
 	Plugin URI: http://www.nonverbla.de/blog/wordpress-plugin-inline-attachments/
 	Description: Add a Meta Box containing the Media Panel inside the edit screen. Also adjust wich options should be displayed for attachments (e.g. "Insert Image", "Image Size", "Alignment")
-	Version: 1.0
+	Version: 1.0.1
 	Author: Basics09
 	Author URI: http://www.basics09.de
 	License: GPL
@@ -444,8 +444,8 @@ class Inline_attachments {
 			$args = array(
 				"public" => true
 			);
-			$post_types = get_post_types($args, "objects");
-			unset($post_types["attachment"]);
+			$ia_post_types = get_post_types($args, "objects");
+			unset($ia_post_types["attachment"]);
 
 			$inline_attachments_post_types = get_option("inline_attachments_post_types");
 			$inline_attachments_box_titles = get_option("inline_attachments_box_titles");
@@ -456,7 +456,7 @@ class Inline_attachments {
 			}
 
 			// Default media elements. Don't forget to re-save the settings in the admin area after you change any
-			// of the css selectors or Descritpions, so the option can be updated. 
+			// of the css selectors or Descriptions, so the option can be updated. 
 
 			// This Array contains all ELements you can hide or show:
 			// [0] The Name of the Element
@@ -464,7 +464,7 @@ class Inline_attachments {
 			// [2] If the element should be visible (true) or not (false)
 
 			$default_inline_attachments_media_elements = array(
-				array(__("Order") . " " . __("Ascending") . " / " . __("Descending"), "#sort-buttons", false),
+				array(__("All Tabs") . " " . __("Show") . " / " . __("Hide"), "#sort-buttons", true),
 				array("Tab “".__("From URL")."”", "#media-upload #tab-type_url", false),
 				array("Tab “".__("Media Library")."”", "#media-upload #tab-library", false),
 				array(__("Edit Image"), ".media-item-info .button", false),
@@ -490,7 +490,7 @@ class Inline_attachments {
 			
 			$inline_attachments_features = array(
 				array("<strong>Bulk Delete:</strong> " . __("Add a checkbox for mass deletion to every media item (Saves you a lot of time)", "inlineattachments"), "ia_bulk_delete_enabled", true),
-				array("<strong>".__("Hide Thickbox Buttons", "inlineattachments").":</strong> " . __("Hide all buttons for opening the attachments screen in the thickbox", "inlineattachments"), "ia_hide_thickbox_buttons", false)
+				array("<strong>".__("Hide Thickbox Buttons", "inlineattachments").":</strong> " . __("Hide all buttons for opening the attachments screen in the thickbox", "inlineattachments"), "ia_hide_thickbox_buttons", true)
 			);
 			// Filling in default values, if the options aren't set yet
 			foreach($inline_attachments_features as $feature){
@@ -503,7 +503,7 @@ class Inline_attachments {
 			// If the user clicked on “Save Changes”:
 
 			if ( isset( $_POST['action'] ) ) {
-				if ( $_POST['action'] == "inline_attachments_options_save" && $_POST['doaction_save']) {
+				if ( $_POST['action'] == "inline_attachments_options_save" && $_POST['doaction_save_inline_attachments_settings']) {
 
 					// Delete all previously saved options
 					delete_option("inline_attachments_post_types");
@@ -519,8 +519,8 @@ class Inline_attachments {
 					
 					// Enable / Disable Meta Boxes for Post Types
 					$count = 0;
-					foreach($post_types as $pt){
-						$inline_attachments_post_types[$count] = $_POST['post_type'][$count] ? $_POST['post_type'][$count] : false;
+					foreach($ia_post_types as $pt){
+						$inline_attachments_post_types[$count] = $_POST['ia_post_type'][$count] ? $_POST['ia_post_type'][$count] : false;
 						$inline_attachments_box_titles[$count] = $_POST['box_title'][$count] ? $_POST['box_title'][$count] : false;
 						$count ++;
 					}
@@ -545,7 +545,7 @@ class Inline_attachments {
 					}
 					
 					$message = __("Options saved.", "inlineattachments");
-				} elseif( $_POST['action'] == "inline_attachments_options_save" && $_POST['doaction_reset'] ){
+				} elseif( $_POST['action'] == "inline_attachments_options_save" && $_POST['doaction_reset_inline_attachments_settings'] ){
 					$inline_attachments_post_types = array();
 					$inline_attachments_box_titles = array();
 					$inline_attachments_media_elements = $default_inline_attachments_media_elements;
@@ -616,7 +616,7 @@ class Inline_attachments {
 						<?php
 							$count = 0;
 							$alternate = true;
-							foreach($post_types as $pt) : ?>
+							foreach($ia_post_types as $pt) : ?>
 								<?php 
 									$checked = $inline_attachments_post_types[$count];
 									$box_title = $inline_attachments_box_titles[$count];
@@ -625,12 +625,12 @@ class Inline_attachments {
 								 ?>
 								<tr id='post-type-<?php echo $count; ?>' class='<?php echo ($alternate? 'alternate' : ''); ?> author-self status-publish format-default iedit' valign="top">
 									<th style="padding: 20px 0px 0px 0px;" scope="row" class="check-column">
-										<input type="checkbox" <?php echo ($checked ? ' checked="checked"' : ''); ?> id="post_type[<?php echo $count; ?>]" name="post_type[<?php echo $count; ?>]" value="<?php echo $pt->name; ?>" />
+										<input type="checkbox" <?php echo ($checked ? ' checked="checked"' : ''); ?> id="ia_post_type[<?php echo $count; ?>]" name="ia_post_type[<?php echo $count; ?>]" value="<?php echo $pt->name; ?>" />
 									</th>
 									<td style="line-height: 45px;" class="post-title page-title column-title">
 										<strong>
 											<span class="row-title">
-												<label for="post_type[<?php echo $count; ?>]"><?php echo $pt->labels->menu_name; ?></label>
+												<label for="ia_post_type[<?php echo $count; ?>]"><?php echo $pt->labels->menu_name; ?></label>
 											</span>
 										</strong>
 									</td>
@@ -642,10 +642,6 @@ class Inline_attachments {
 							<?php endforeach; ?>
 					</tbody>
 				</table>
-				<p style="display: none; margin: 20px 0px 20px 0px;">
-					<input id="submit_changes1" class="button-primary" type="submit" value="<?php _e("Save Changes", "inlineattachments"); ?>" name="doaction_save" />
-					<input id="reset1" class="button-secondary" type="submit" value="<?php _e("Reset Defaults", "inlineattachments"); ?>" name="doaction_reset" />
-				</p>
 				<!-- MEDIA ELEMENTS -->
 				<h3><?php _e("Cleaning up the Attachments Screen", "inlineattachments") ?></h3>
 				<p>
@@ -683,8 +679,8 @@ class Inline_attachments {
 				</ul>
 				
 				<p style="margin: 20px 0px 20px 0px;">
-					<input id="submit_changes2" class="button-primary" type="submit" value="<?php _e("Save Changes", "inlineattachments"); ?>" name="doaction_save" />
-					<input id="reset2" class="button-secondary" type="submit" value="<?php _e("Reset Defaults", "inlineattachments"); ?>" name="doaction_reset" />
+					<input id="submit_changes2" class="button-primary" type="submit" value="<?php _e("Save Changes", "inlineattachments"); ?>" name="doaction_save_inline_attachments_settings" />
+					<input id="reset2" class="button-secondary" type="submit" value="<?php _e("Reset Defaults", "inlineattachments"); ?>" name="doaction_reset_inline_attachments_settings" />
 				</p>
 				
 			</form>
