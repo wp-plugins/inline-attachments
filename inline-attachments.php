@@ -4,11 +4,9 @@
 	Plugin URI: http://www.nonverbla.de/blog/wordpress-plugin-inline-attachments/
 	Description: Add a Meta Box containing the Media Panel inside the edit screen. Also adjust wich options should be displayed for attachments (e.g. "Insert Image", "Image Size", "Alignment")
 	Version: 1.0.1
-	Author: Basics09
+	Author: BASICS09, nonverbla
 	Author URI: http://www.basics09.de
 	License: GPL
-	
-	Plugin: Copyright 2011 Nonverbla  (email : rasso@nonverbla.de)
 
 	This program is free software; you can redistribute it and/or modify
 	it under the terms of the GNU General Public License as published by
