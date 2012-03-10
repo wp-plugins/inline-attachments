@@ -1,11 +1,11 @@
 === Inline Attachments ===
 
-Contributors: Nonverbla
+Contributors: nonverbla
 Plugin Name: Inline Attachments
 Plugin URI: http://www.nonverbla.de/blog/wordpress-plugin-inline-attachments/
 Tags: attachments, inline, thickbox, meta box, adjust, options, admin, bulk, delete, image, checkbox, ajax, media, upload
 Author URI: http://www.nonverbla.de/
-Author: Nonverbla
+Author: nonverbla
 Donate link: http://www.nonverbla.de/blog/wordpress-plugin-inline-attachments/
 Requires at least: 3.0
 Tested up to: 3.3.1
