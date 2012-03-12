@@ -18,9 +18,10 @@
 	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 	GNU General Public License for more details.
 */
+if(is_admin()){
+	$inline_attachments = new Inline_attachments();
+};
 
-
-$inline_attachments = new Inline_attachments();
 
 class Inline_attachments {
 	
@@ -123,10 +124,12 @@ class Inline_attachments {
 		$inline_attachments_box_titles = get_option("inline_attachments_box_titles");
 		// ADD INLINE ATTACHMENTS BOX FOR EACH ACTIVATED POST TYPE 
 		$count = 0;
-		if($inline_attachments_post_types){
+		if(isset($inline_attachments_post_types)){
 			foreach($inline_attachments_post_types as $pt) {
-				add_meta_box('inline_attachments', $inline_attachments_box_titles[$count], array($this, 'inline_attachments_box_inner'), $pt, 'normal', 'low');
-				$count ++;
+				if($pt != false){
+					add_meta_box('inline_attachments', $inline_attachments_box_titles[$count], array($this, 'inline_attachments_box_inner'), $pt, 'normal', 'low');
+					$count ++;
+				}
 			}
 		}
 	}
@@ -518,8 +521,8 @@ class Inline_attachments {
 					// Enable / Disable Meta Boxes for Post Types
 					$count = 0;
 					foreach($ia_post_types as $pt){
-						$inline_attachments_post_types[$count] = $_POST['ia_post_type'][$count] ? $_POST['ia_post_type'][$count] : false;
-						$inline_attachments_box_titles[$count] = $_POST['box_title'][$count] ? $_POST['box_title'][$count] : false;
+						$inline_attachments_post_types[$count] = isset($_POST['ia_post_type'][$count]) ? $_POST['ia_post_type'][$count] : false;
+						$inline_attachments_box_titles[$count] = isset($_POST['box_title'][$count]) ? $_POST['box_title'][$count] : false;
 						$count ++;
 					}
 					update_option("inline_attachments_post_types", $inline_attachments_post_types);
@@ -528,7 +531,7 @@ class Inline_attachments {
 					// Enable / Disable Media Elements
 					$count = 0;
 					foreach($inline_attachments_media_elements as $me){
-						$inline_attachments_media_elements[$count][2] = $_POST["ia_media_element"][$count] ? $_POST["ia_media_element"][$count] : false;
+						$inline_attachments_media_elements[$count][2] = isset($_POST["ia_media_element"][$count]) ? $_POST["ia_media_element"][$count] : false;
 						$count ++;
 					}
 					update_option("inline_attachments_media_elements", $inline_attachments_media_elements);
