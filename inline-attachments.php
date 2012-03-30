@@ -128,8 +128,8 @@ class Inline_attachments {
 			foreach($inline_attachments_post_types as $pt) {
 				if($pt != false){
 					add_meta_box('inline_attachments', $inline_attachments_box_titles[$count], array($this, 'inline_attachments_box_inner'), $pt, 'normal', 'low');
-					$count ++;
 				}
+				$count ++;
 			}
 		}
 	}
