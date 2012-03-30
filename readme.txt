@@ -9,8 +9,8 @@ Author: BASICS09, nonverbla
 Donate link: http://www.nonverbla.de/blog/wordpress-plugin-inline-attachments/
 Requires at least: 3.0
 Tested up to: 3.3.1
-Stable tag: 1.0.1
-Version: 1.0.1
+Stable tag: 1.0.2
+Version: 1.0.2
 
 Put the focus in the admin area of Wordpress on media files. Functionally and visually.
 
@@ -79,6 +79,9 @@ If you have comments or questions, please go to the official plugin page: [www.n
 
 == Changelog ==
 
+
+= 1.0.2 =
+* Bugfix with header information
 = 1.0.1 =
 * Bugfix for compatibility with wp 3.3.1
 = 1.0 =
