@@ -17,11 +17,14 @@
 			$("#tab-gallery").append(galleryLink);
 			$("#tab-gallery").css("display", "none");
 			checkIfMoreThanZero();
-		} else if($("#tab-gallery a").hasClass("current") && $(".media-item").length > 1) {
-			// If we are on the gallery screen
-			putMenuOrderAfterShowHide();
-			addInvertOrderButton();
-			reverseInitialOrder();
+		} else if($("#tab-gallery a").hasClass("current")) {
+			
+			// If there are more than one Items
+			if($(".media-item").length > 1){
+				putMenuOrderAfterShowHide();
+				addInvertOrderButton();
+				reverseInitialOrder();
+			}
 			saveAjax();
 			addAjaxOrderAutoSave();
 			addAjaxFieldsAutoSave();
