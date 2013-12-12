@@ -3,7 +3,7 @@
 	Plugin Name: Inline Attachments
 	Plugin URI: http://www.nonverbla.de/blog/wordpress-plugin-inline-attachments/
 	Description: Add a Meta Box containing the Media Panel inside the edit screen. Also adjust wich options should be displayed for attachments (e.g. "Insert Image", "Image Size", "Alignment")
-	Version: 1.0.3
+	Version: 1.0.4
 	Author: BASICS09, nonverbla
 	Author URI: http://www.basics09.de
 	License: GPL
@@ -212,14 +212,19 @@ class Inline_attachments {
 			#gallery-form .media-item .pinkynail {
 				max-width: 80px !important;
 				max-height: 36px !important;
-				margin: 1px 0px 0px 0px !important;
+				margin: 1px 10px 0px 0px !important;
 			}
 			#media-upload .menu_order {
 				text-align: center;
-				margin-right: 20px !important;
-				width: 23px;
+				margin: 0 !important;
+				padding: 7px 20px 0 12px !important;
 			}
-			#media-upload .menu_order input {
+			
+			#media-upload .menu_order .menu_order_input {
+				padding: 0px !important;
+				height: 25px;
+				line-height: 25px;
+				width: 25px;
 				text-align: center;
 			}
 			#media-upload td.A1B1 {

@@ -2,15 +2,13 @@
 
 Contributors: BASICS09, nonverbla
 Plugin Name: Inline Attachments
-Plugin URI: http://www.nonverbla.de/blog/wordpress-plugin-inline-attachments/
+Plugin URI: http://wordpress.org/plugins/inline-attachments/
 Tags: attachments, inline, thickbox, meta box, adjust, options, admin, bulk, delete, image, checkbox, ajax, media, upload
 Author URI: http://www.nonverbla.de/
 Author: BASICS09, nonverbla
-Donate link: http://www.nonverbla.de/blog/wordpress-plugin-inline-attachments/
 Requires at least: 3.0
-Tested up to: 3.3.1
-Stable tag: 1.0.3
-Version: 1.0.2
+Tested up to: 3.8.0
+Version: 1.0.4
 
 Put the focus in the admin area of Wordpress on media files. Functionally and visually.
 
@@ -79,6 +77,8 @@ If you have comments or questions, please go to the official plugin page: [www.n
 
 == Changelog ==
 
+= 1.0.4 =
+* Compatibility with WP 3.8
 = 1.0.3 =
 * Bugfix with animating the height of the iframe
 = 1.0.2 =
