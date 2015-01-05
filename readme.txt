@@ -14,6 +14,10 @@ Put the focus in the admin area of Wordpress on media files. Functionally and vi
 
 == Description ==
 
+= A Note to all you developers: As WordPress continues to develop further, this plugin is not a big help anymore. If you have Inline Attachments already installed, I strongly advise you to migrate to another solution like Wordpress Core functionality or plugins like [Advanced Custom Fields](http://www.advancedcustomfields.com/).
+
+Support for Inline Attachments will very likely be discontinued in future releases of WP. =
+
 = Short Version (aka Features Overview) =
 
 * Adds the attachments screen that's usually reached trough the thickbox popup directly to a meta box inside the post edit screen
