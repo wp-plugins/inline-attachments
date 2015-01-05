@@ -37,10 +37,6 @@ In the plugin settings, you can select all post types, where the Inline Attachme
 
 Another thing with mainly media-driven websites is, that you normally don't write a text post and put some images into the text flow. Because of this, you wouldn't need the options for Image Size, Alignment, Link URL and so on in the attachment screen. With Inline Attachments, you can easily select which options should be visible to the admin for editing media files.
 
-Also, I always thought, deleting a bunch of media files in the attachments screen was quite a hassle. You had to expand every item you wanted to delete, press delete and even confirm that, phew! That's why I included the functionality of my plugin [Attachments Bulk Delete](http://www.nonverbla.de/blog/wordpress-plugin-inline-attachments/). I like having everything in the same place.
-
-If you have comments or questions, please go to the official plugin page: [www.nonverbla.de/blog/wordpress-plugin-inline-attachments](http://www.nonverbla.de/blog/wordpress-plugin-inline-attachments/)
-
 = Tested on =
 
 * (OSX) Safari :)
@@ -81,6 +77,7 @@ If you have comments or questions, please go to the official plugin page: [www.n
 
 = 1.0.5 =
 * Compatibility with WP 4.0 and 4.1. Fixes inverted order of attachments.
+* Warning: This is pretty sure the last update! You should think about migrating to another solution.
 = 1.0.4 =
 * Compatibility with WP 3.8
 = 1.0.3 =
