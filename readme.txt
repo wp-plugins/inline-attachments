@@ -7,8 +7,8 @@ Tags: attachments, inline, thickbox, meta box, adjust, options, admin, bulk, del
 Author URI: http://www.nonverbla.de/
 Author: BASICS09, nonverbla
 Requires at least: 3.0
-Tested up to: 3.8.0
-Version: 1.0.4
+Tested up to: 4.1
+Version: 1.0.5
 
 Put the focus in the admin area of Wordpress on media files. Functionally and visually.
 
@@ -77,6 +77,8 @@ If you have comments or questions, please go to the official plugin page: [www.n
 
 == Changelog ==
 
+= 1.0.5 =
+* Compatibility with WP 4.0 and 4.1. Fixes inverted order of attachments.
 = 1.0.4 =
 * Compatibility with WP 3.8
 = 1.0.3 =

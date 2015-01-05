@@ -3,7 +3,7 @@
 	Plugin Name: Inline Attachments
 	Plugin URI: http://www.nonverbla.de/blog/wordpress-plugin-inline-attachments/
 	Description: Add a Meta Box containing the Media Panel inside the edit screen. Also adjust wich options should be displayed for attachments (e.g. "Insert Image", "Image Size", "Alignment")
-	Version: 1.0.4
+	Version: 1.0.5
 	Author: BASICS09, nonverbla
 	Author URI: http://www.basics09.de
 	License: GPL
@@ -59,6 +59,8 @@ class Inline_attachments {
 				if($this->check_if_bulk_delete_enabled() && $GLOBALS['pagenow'] == 'media-upload.php') {
 					add_action('init', array($this,'add_attachments_bulk_delete_js'), 100);
 				}
+				add_filter("pre_get_posts", array(&$this, "pre_get_posts") );
+
 			} elseif(in_array($GLOBALS['pagenow'], array('post.php', 'post-new.php'))){
 				// if this is the post edit screen
 				add_action('init', array($this,'add_post_screen_js'));
@@ -68,6 +70,21 @@ class Inline_attachments {
 		return true;
 	}
 	
+	function pre_get_posts($query) {
+
+		// Fix for WP 4.0 orderby
+		if (4 <= floatval(get_bloginfo('version'))) {
+			$orderby = $query->get("orderby");
+			if( "menu_order ASC, ID" === $orderby ) {
+				$query->set("orderby", array(
+					"menu_order" => "ASC"
+				));
+			}
+			$orderby = $query->get("orderby");
+		}
+
+	}
+
 	// Check if Bulk Delete is enabled 
 	function check_if_bulk_delete_enabled(){
 		// This functionality is based on my plugin "attachments bulk delte", so you won't need it if this plugin is activated in your wp installation already.
